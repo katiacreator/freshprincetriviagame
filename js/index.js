@@ -5,3 +5,4 @@ const titleCard = {
   nextBtn = `<button class="continueBtn"><i class="fas fa-long-arrow-alt-right"></i>CLICK NEXT</button>`
   //functions?
 }
+console.log(titleCard.gameLogoImg)

@@ -1,5 +1,5 @@
-I. Home Screen-index.html
-    A. Title Card - game logo card on hover flips to show instructions
+## I. Home Screen-index.html
+   ### A. Title Card - game logo card on hover flips to show instructions
     B. Instructions Card - gives instructions for the game, "click next to view categories"
         i. a right arrow icon next button - will expand by 50% on hover, click event function needed to send to next page 
     C. Categories Card Screen- card grid of 5 cards
