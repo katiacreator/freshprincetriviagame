@@ -2,14 +2,15 @@ I. Home Screen-index.html
     A. Title Card - game logo card on hover flips to show instructions
     B. Instructions Card - gives instructions for the game, "click next to view categories"
         i. a right arrow icon next button - will expand by 50% on hover, click event function needed to send to next page 
-    C. Categories Card - card with a accordion drop down menu that list all the categories featured in the quiz and decribes the individual categories
+    C. Categories Card Screen- card grid of 5 cards
         i. different icons for each category card for MVP
             1. star - GUEST STARS: from celebrity appearances to crossover tv character appearances 
             2. heart - WILL'S ROMANTIC RELATIONSHIPS: there's a lot to unpack here
             3. video camera - BEHIND THE CAMERA: history of show production
             4. ?? - CHARACTERS NAMES : be ready to name not just the main cast but recurring character's names
             5. ?? - MAJOR PLOTLINES: ex. will and carlton living in the beach house, the trevor incident, uncle phil's job, will's dad episode
-        ii. different img of characters for each category-BONUS FEATURE
+        ii. card will flip on hover to show the description 
+        iii. different img of characters for each category-BONUS FEATURE
 II. Game Screen - game.html
    A. Category Card- card that shows the icon of the category that expands to the left revealing the question div
    B. Question Card- this card will have a timer, the question, the 3 choices, and next arrow button set up as a grid to make click events easier
