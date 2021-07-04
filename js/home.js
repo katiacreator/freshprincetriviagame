@@ -1,15 +1,7 @@
 //* Title Card Object */
-/* const title = {
-  questionImg: url(jazz.jpg), //link
-  questionHeading: "What is Will's mom's name?",
-  choices: {
-    A: "Carlton",
-    B: "Chuck",
-    C: "Charleston",
-  },
-  //"categoryId"-indexOf categories array
-  categoryArray: [],
-  answer: "A",
-  score: 0,
+const titleCard = {
+  gameLogoImg: `<img src="placeholder.jpg" alt="game logo placeholder">`,
+  gameInstructions: `<h2 class="gameInstructions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vero mollitia, minima impedit nobis cumque veniam asperiores vitae nesciunt quam!</h2>`,
+  nextBtn = `<button class="continueBtn"><i class="fas fa-long-arrow-alt-right"></i>CLICK NEXT</button>`
   //functions?
-}; */
+}
