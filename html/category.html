@@ -13,29 +13,24 @@
     <title>Category Screen</title>
 </head>
 <body>
-    <!-- div for category card img -->
-    <main id="category-card">
+    <!-- whole template literal for js ???????-->
+    <main id="category-container">
+        <!-- each card will flip all will have the same size but different colors -->
         <section id="category-card-grid" class="row-1 flipCard">
-                <section class="category-card">CATEGORY1
+            <!-- Card Grid will be 1 row 5 columns -->
+            <section class="category-card column1">
+                <section id="icon">
+                    <img src="category1-icon.jpg" alt="category1icon placeholder" class="flipCard">
                 </section>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <section class="category-card">CATEGORY2
-                    <p>Lorem ipsum dolor sit amet.</p>
+                <section id="back">
+                    <p id="title">
+                        CATEGORY1 
+                    </p>
+                    <p id="description">Lorem ipsum dolor sit amet.</p>
                 </section>
-                <section class="category-card">CATEGORY3
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </section>
-                <section class="category-card">CATEGORY4
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </section>
-                <section class="category-card">CATEGORY5
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </section>
-            </ul>
-
-
+            </section>
+        </section>
+        <!-- CardGridEnd -->
     </main>
-   
-
 </body>
 </html>
