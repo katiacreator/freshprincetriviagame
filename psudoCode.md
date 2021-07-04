@@ -1,9 +1,8 @@
 #Fresh Prince Trivia Game-Pseudocode
-create one js file for each screen-home, game, score
-create one empty body html file for each screen-home, game, score
+create one js file for each screen-home, game, score-DONE
+create one empty body html file for each screen-home, game, score-DONE
 <!-- *********************************************************** -->
-##Variables-testtest3
-
+##Variables-
 assign const for html elemetns to be display via js, buttons, question object, 
 assign let variables for score, 
 build an object of questions with arrays:
