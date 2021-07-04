@@ -2,7 +2,7 @@
 create one js file for each screen-home, game, score
 create one empty body html file for each screen-home, game, score
 <!-- *********************************************************** -->
-##Variables-test
+##Variables-testtest3
 
 assign const for html elemetns to be display via js, buttons, question object, 
 assign let variables for score, 
