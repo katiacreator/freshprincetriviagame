@@ -1,10 +1,10 @@
-console.log("we live")
+console.log("we live");
 
 //* Quiz Cards Object */
 const questionsArray = [
   {
     id: 1,
-    img:`<i class="fas fa-signature"></i>` ,
+    img: `<i class="fas fa-signature"></i>`,
     question: "1What is Will's cousin's name that he is always berating?",
     choicesArray: ["Carlton", "Chuck", "Charleston"],
     answer: "Carlton",
@@ -16,7 +16,7 @@ const questionsArray = [
     //questionImg: url(jazz.jpg), //link
     img: `<i class="far fa-star"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
-    choicesArray: ["Carlton", "Chuck", "Charleston"],
+    choicesArray: ["two", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "GUEST STARS",
     score: 0,
@@ -26,7 +26,7 @@ const questionsArray = [
     //questionImg: url(jazz.jpg), //link
     img: `<i class="fas fa-network-wired"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
-    choicesArray: ["Carlton", "Chuck", "Charleston"],
+    choicesArray: ["three", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "PLOTLINES",
     score: 0,
@@ -36,7 +36,7 @@ const questionsArray = [
     //questionImg: url(jazz.jpg), //link
     img: `<i class="fas fa-film"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
-    choicesArray: ["Carlton", "Chuck", "Charleston"],
+    choicesArray: ["four", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "BEHIND THE CAMERA",
     score: 0,
@@ -46,12 +46,13 @@ const questionsArray = [
     //questionImg: url(jazz.jpg), //link
     img: `<i class="far fa-heart"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
-    choicesArray: ["Carlton", "Chuck", "Charleston"],
+    choicesArray: ["five", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "WILL'S RELATIONSHIPS",
     score: 0,
   },
-];
+]
+//console.log("questionsArray: ", questionsArray);
 
 /* const timeLeft = document.querySelector('#time-left')
 console.log(timeLeft)
@@ -62,39 +63,44 @@ console.log('questionSection: ', questionSection);
 const question = document.querySelector('#question')
 console.log(question)
 const choices = document.querySelector('#choices')
-console.log(choices) */
-
-
+console.log(choices)
+ */
+// const questionHtml = ""
 //HTML Template Literal to append to content
-questionsArray.forEach((question) => {
 const markup = `<section class="timer">
     <section id="time-left">
-      <i class="far fa-hourglass"></i>Time Left
+    <i class="far fa-hourglass"></i>Time Left
     </section>
     <section id="seconds-text">15</section>
-  </section>
-  <section id="question-section">
-  <section id="category-icon">${question.img}</section>
-    <!-- div for questions -->
-    <section id="category">${question.category}</section>
-    <section id="question">${question.question}</section>
+    </section>
+    <section id="question-section">
     <ul id="choices>
-   /* to be fixed */
+    /* to be fixed */
     </ul>
-  </section>`
-  //console.log(markup)
-})
+    </section>`
 
-const content = document.querySelector("content")
-const choices = questionsArray.choices
-console.log(choices)
-/* questionsArray.choicesArray.forEach((choice, i)=>{
-  i = choices.indexOf(i)
-  console.log('i: ', i);
-  choice = choices[i]
-  console.log('choice: ', choice);
-}) */
+//question.choicesArray
 
-/* <li id="choices">A:${question.choice[0]}</li>
-<li id="choices">A:${question.choice[1]}</li>
-<li id="choices">A:${question.choice[2]}</li> */
+//console.log(questionMarkup)
+const mainContent = document.querySelector("#content")
+mainContent.innerHTML = markup
+//console.log(content)html is appended to main div with id of content
+const sectionContent = document.querySelector("#question-section")
+//console.log('questionContent: ', sectionContent)//html is appended to section with id question section this houses the question and choices info
+//looping through and appending html of question info-needs a function with setInterval
+function appendQuestion() {
+  questionsArray.forEach((question, i) => {
+    //console.log(question, i)confirms it is looping through the objects to pull data needed
+    const questionHtml = `<section id="category-icon">${question.img}</section>
+    <section id="category">${question.category}</section>
+    <section id="question">${question.question}</section>`
+    console.log(questionHtml)
+    //console.log(question.choicesArray)
+    // question.forEach((choice)=>{
+    /*  `<li id="choices">A:${question.choicesArray}</li>
+      <li id="choices">B:${question.choicesArray}</li>
+      <li id="choices">C:${question.choicesArray}</li>` */
+    //console.log(choiceHtml)
+  })
+}
+appendQuestion()
