@@ -59,10 +59,10 @@ console.log('icon: ', icon);
 const startBtn = document.querySelector("#startBtn")
 console.log("startBtn: ", startBtn)
 //click event for start button
-//startBtn.addEventListener("click", () => {
-  //console.log("this button has been clicked")
+startBtn.addEventListener("click", () => {
+  console.log("this button has been clicked")
   //display quiz.html goes here
-//})
+})
 
 //insertIcon()
 // insertCategory()
