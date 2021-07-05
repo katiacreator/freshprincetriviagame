@@ -1,13 +1,12 @@
-console.log("we live");
+console.log("we live")
 
 //* Quiz Cards Object */
 const questionsArray = [
   {
     id: 1,
-    //questionImg: url(jazz.jpg), //link
-    img: "",
+    img:`<i class="fas fa-signature"></i>` ,
     question: "1What is Will's cousin's name that he is always berating?",
-    choices: ["Carlton", "Chuck", "Charleston"],
+    choicesArray: ["Carlton", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "CHARACTER NAMES",
     score: 0,
@@ -15,11 +14,41 @@ const questionsArray = [
   {
     id: 2,
     //questionImg: url(jazz.jpg), //link
-    img: "",
+    img: `<i class="far fa-star"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
-    choices: ["Carlton", "Chuck", "Charleston"],
+    choicesArray: ["Carlton", "Chuck", "Charleston"],
     answer: "Carlton",
-    category: "Guest stars",
+    category: "GUEST STARS",
+    score: 0,
+  },
+  {
+    id: 3,
+    //questionImg: url(jazz.jpg), //link
+    img: `<i class="fas fa-network-wired"></i>`,
+    question: "2What is Will's cousin's name that he is always berating?",
+    choicesArray: ["Carlton", "Chuck", "Charleston"],
+    answer: "Carlton",
+    category: "PLOTLINES",
+    score: 0,
+  },
+  {
+    id: 4,
+    //questionImg: url(jazz.jpg), //link
+    img: `<i class="fas fa-film"></i>`,
+    question: "2What is Will's cousin's name that he is always berating?",
+    choicesArray: ["Carlton", "Chuck", "Charleston"],
+    answer: "Carlton",
+    category: "BEHIND THE CAMERA",
+    score: 0,
+  },
+  {
+    id: 5,
+    //questionImg: url(jazz.jpg), //link
+    img: `<i class="far fa-heart"></i>`,
+    question: "2What is Will's cousin's name that he is always berating?",
+    choicesArray: ["Carlton", "Chuck", "Charleston"],
+    answer: "Carlton",
+    category: "WILL'S RELATIONSHIPS",
     score: 0,
   },
 ];
@@ -36,64 +65,36 @@ const choices = document.querySelector('#choices')
 console.log(choices) */
 
 
-//HTML Template Literal to append
-const createMarkup = function createMarkup(data) {
-  const markup = `<section class="timer">
+//HTML Template Literal to append to content
+questionsArray.forEach((question) => {
+const markup = `<section class="timer">
     <section id="time-left">
       <i class="far fa-hourglass"></i>Time Left
     </section>
     <section id="seconds-text">15</section>
   </section>
   <section id="question-section">
-    <!-- <img src="{data.img}" alt="placeholder" id="question-img"> -->
+  <section id="category-icon">${question.img}</section>
     <!-- div for questions -->
-    <section id="category">${data.category}</section>
-    <section id="question">${data.question}</section>
-    <ul>
-    <li id="choices">A:${data.A}</li>
-    <li id="choices">B:${data.B}</li>
-    <li id="choices">C:${data.C}</li>
+    <section id="category">${question.category}</section>
+    <section id="question">${question.question}</section>
+    <ul id="choices>
+   /* to be fixed */
     </ul>
   </section>`
+  //console.log(markup)
+})
 
-  return markup
-}
-
-//  Element Data
-//loop through question array to print each item
-function defineSections() {
-  questionsArray.forEach((question, i, choices) => {
-  const item = Object.create(null)
-    i = question.id//this is getting me the right thing the id of an item in question array
-    // console.log('i: ', i) it is grabbing the id
-    item.question = createMarkup({
-      //img: "",//worry about this last
-      category: `${question.category}`,
-      question: `${question.question}`,
-      A: `${question.choices[0]}`,
-      B: `${question.choices[1]}`,
-      C: `${question.choices[2]}`,
-    })
-    console.log(item) //it is return the items to the template literal
-    return item
-  })
-}
-
-function joinHtml(items) {
-  let joinedHtml = "";
-  console.log('joinedHtml: ', joinedHtml);
-  Object.keys(items).forEach(key => {
-    joinedHtml += items[key];
-  });
-  return joinedHtml
-}
 const content = document.querySelector("content")
-console.log('89content: ', content);
-const items = defineSections()
-console.log('91items: ', items);
-const rawHtml = joinHtml(items)
-console.log('93rawHtml: ', rawHtml);
+const choices = questionsArray.choices
+console.log(choices)
+/* questionsArray.choicesArray.forEach((choice, i)=>{
+  i = choices.indexOf(i)
+  console.log('i: ', i);
+  choice = choices[i]
+  console.log('choice: ', choice);
+}) */
 
-
-// We are only interacting ONCE directly with the DOM
-content.insertAdjacentHTML("beforeend", rawHtml);
+/* <li id="choices">A:${question.choice[0]}</li>
+<li id="choices">A:${question.choice[1]}</li>
+<li id="choices">A:${question.choice[2]}</li> */
