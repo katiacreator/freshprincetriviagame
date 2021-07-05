@@ -5,21 +5,8 @@ create one empty body html file for each screen-home, game, score-DONE
 ##Variables-
 assign const for html elemetns to be display via js, buttons, question object, 
 assign let variables for score, 
-build an object of questions with arrays:
-    const quiz = {
-        question id: 1
-    question-img: url(jazz.jpg) link
-    question: "What is Will's mom's name?"
-    choices:  {
-        "A": "Carlton"
-        "B": "Chuck"
-        "C": "Charleston"
-    } 
-    categoryId-indexOf categories array
-    categoriesArray,
-    answer: "A"
-    score = 0,
-    functions?
+build an array of questions with objects:
+  
 <!-- *********************************************************** -->
 ## Event Listeners
 ### continue button, start button, prev arrow icon button, next arrow icon button, home icon button-reset game function will be attached
@@ -44,4 +31,4 @@ append how many they got right out of total to stats component as MVP
 -displayMsg(div)
 -displayQuestionImgDIV
 --displayNextQuestion
---toggle
+--toggle classes to show and hide question info once quiz starts
