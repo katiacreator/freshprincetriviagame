@@ -4,7 +4,7 @@ console.log("we live");
 const questionsArray = [
   {
     id: 1,
-    img: `<i class="fas fa-signature"></i>`,
+    img: `<i class= "fas fa-signature"></i>`,
     question: "1What is Will's cousin's name that he is always berating?",
     choicesArray: ["Carlton", "Chuck", "Charleston"],
     answer: "Carlton",
@@ -51,8 +51,8 @@ const questionsArray = [
     category: "WILL'S RELATIONSHIPS",
     score: 0,
   },
-]
-//console.log("questionsArray: ", questionsArray);
+];
+console.log("questionsArray: ", questionsArray);
 
 /* const timeLeft = document.querySelector('#time-left')
 console.log(timeLeft)
@@ -77,30 +77,39 @@ const markup = `<section class="timer">
     <ul id="choices>
     /* to be fixed */
     </ul>
-    </section>`
+    </section>`;
 
 //question.choicesArray
 
 //console.log(questionMarkup)
-const mainContent = document.querySelector("#content")
-mainContent.innerHTML = markup
+const mainContent = document.querySelector("#content");
+mainContent.innerHTML = markup;
 //console.log(content)html is appended to main div with id of content
-const sectionContent = document.querySelector("#question-section")
+const sectionContent = document.querySelector("#question-section");
 //console.log('questionContent: ', sectionContent)//html is appended to section with id question section this houses the question and choices info
 //looping through and appending html of question info-needs a function with setInterval
-function appendQuestion() {
-  questionsArray.forEach((question, i) => {
-    //console.log(question, i)confirms it is looping through the objects to pull data needed
-    const questionHtml = `<section id="category-icon">${question.img}</section>
+
+questionsArray.forEach((question) => {
+  //console.log(question)//confirms it is looping through the objects to pull data needed
+  //console.log(question)
+  //for( let i = 0; i < question; i++){
+  const questionHtml = `<section id="category-icon">${question.img}</section>
     <section id="category">${question.category}</section>
-    <section id="question">${question.question}</section>`
-    console.log(questionHtml)
-    //console.log(question.choicesArray)
-    // question.forEach((choice)=>{
-    /*  `<li id="choices">A:${question.choicesArray}</li>
+    <section id="question">${question.question}</section>`;
+  //console.log(questionHtml); //-this is working
+  sectionContent.innerHTML = questionHtml
+console.log(sectionContent)
+})
+
+
+//showQuestions()
+// setTimeout(appendQuestions(), 10000)
+//console.log(question[i].choicesArray[i])
+  /*   `<li id="choices">A:${question.choicesArray[0]}</li>
+      <li id="choices">B:${question.choicesArray[1]}</li>
+      <li id="choices">C:${question.choicesArray[2]}</li>` */
+  // question.forEach((choice)=>{
+  /*  `<li id="choices">A:${question.choicesArray}</li>
       <li id="choices">B:${question.choicesArray}</li>
       <li id="choices">C:${question.choicesArray}</li>` */
-    //console.log(choiceHtml)
-  })
-}
-appendQuestion()
+  //console.log(choiceHtml)
