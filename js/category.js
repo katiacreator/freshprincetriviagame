@@ -32,9 +32,9 @@ let cardHtml = ""
 categoryArray.forEach((category) => {
     //console.log('category: ', category);
 cardHtml = `<!-- each card will flip all will have the same size but different colors -->
-<!-- <section id="category-card-grid" class="row-1 flipCard"> -->
+ <section id="category-card-grid" class="row-1 flipCard"> 
   <!-- Card Grid will be 1 row 5 columns -->
-  <!-- <section class="category-card column1">
+   <section class="category-card column1">
     <section id="icon">
       ${category.icon}
     </section>
@@ -43,7 +43,7 @@ cardHtml = `<!-- each card will flip all will have the same size but different c
       ${category.description}
     </section>
   </section>
-</section> -->
+</section> 
 <!-- CardGridEnd -->
 <!-- Start the Game Button -->
 <!-- grid 1 row stretch all 5 columns -->
@@ -54,7 +54,8 @@ const cardContent = document.querySelector("#content")
 cardContent.innerHTML = cardHtml
 cardContent.style.color = "black"
 console.log(cardContent)
-
+const icon = document.querySelector("#icon")
+console.log('icon: ', icon);
 const startBtn = document.querySelector("#startBtn")
 console.log("startBtn: ", startBtn)
 //click event for start button
