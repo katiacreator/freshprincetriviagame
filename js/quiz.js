@@ -1,12 +1,7 @@
 console.log("we live");
 const mainContent = document.querySelector("#content");
-console.log('mainContent: ', mainContent);
-let sectionContent = document.querySelector("#question-section");
-console.log('sectionContent: ', sectionContent);
-const questionSection = document.querySelector("#question-section");
-console.log("questionSection: ", questionSection);
-const question = document.querySelector("#question");
-console.log(question);
+console.log("mainContent: ", mainContent);
+
 //* Quiz Cards Object */
 const questionArray = [
   {
@@ -77,37 +72,57 @@ let markup = `<section id="countdown">
 </section>
 </section>
 <section id="question-section">
-<ul id="choices>
-/* to be fixed */
-</ul>
+<section id="category-icon"></section>
+<section id="category"></section>
+<section id="question"></section>
+<section id="choices">
+  </section>
 </section>`;
 
-//console.log(questionMarkup)
+console.log(markup)
 mainContent.innerHTML = markup;
+let sectionContent = document.querySelector("#question-section");
+console.log("sectionContent: ", sectionContent);
+const questionSection = document.querySelector("#question-section");
+console.log("questionSection: ", questionSection);
+const question = document.querySelector("#question");
+console.log(question);
+const choiceSection = document.querySelector("#choices");
+console.log(choiceSection);
+ let choiceContent = document.querySelector("#choices");
+console.log("choiceContent: ", choiceContent); 
 
 let questCount = 0;
 let questNum = 1;
 let score = 0;
 let counter;
-let questionHtml = ""
+let questionHtml = "";
+
 function showQuestion(questNum) {
   //questionsArray.forEach((question) => {
-    //console.log(question)//confirms it is looping through the objects to pull data needed
-    //console.log(question);
-    //for( let i = 0; i < question; i++){
-    questionHtml = `<br><section id="category-icon">${questionArray[questNum].img}</section>
-    <section id="category">${questionArray[questNum].category}</section>
-    <section id="question">${questionArray[questNum].question}</section>`;
-    //console.log(questionHtml); //-this is working
-    console.log('questionHtml: ', questionHtml);
-    sectionContent.innerHTML = questionHtml;
-    console.log(sectionContent);
-    //console.log(question[i].choicesArray[i])
-  /*   const choicesHtml = `<li id="choices">A:${questionArray[questNum].choicesArray}</li>
-<li id="choices">B:${questionArray[questNum].choicesArray}</li>
-<li id="choices">C:${questionArray[questNum].choicesArray}</li>` */
-  }
-console.log(showQuestion(questNum))
+  //console.log(question)//confirms it is looping through the objects to pull data needed
+  //console.log(question);
+  //for( let i = 0; i < question; i++){
+  questionHtml = `<br><section id="category-icon">${questionArray[questNum].img}</section>
+      <section id="category">${questionArray[questNum].category}</section>
+      <section id="question">${questionArray[questNum].question}</section>
+      </section>`;
+  //console.log(questionHtml); //-this is working
+  //console.log("questionHtml: ", questionHtml);
+  sectionContent.innerHTML = questionHtml;
+  //console.log(sectionContent);
+  console.log(questionArray[questNum].choicesArray[0])
+  const choicesHtml = `<p class="choices">A:${questionArray[questNum].choicesArray[0]}</p>
+  <p class="choices">B:${questionArray[questNum].choicesArray[1]}</p>
+  <p class="choices">C:${questionArray[questNum].choicesArray[2]}</p>`;
+  console.log("choicesHtml: ", choicesHtml);
+  choiceContent.innerHTML = choicesHtml
+  console.log(choiceContent);
+}
+
+for( let i=0; i < questionArray.length; i++){
+  showQuestion(questNum)
+}
 
 
 //showQuestions()
@@ -115,7 +130,6 @@ console.log(showQuestion(questNum))
 /*   `<li id="choices">A:${questionsArray[0].choicesArray}</li>
 <li id="choices">B:${questionsArray[1].choicesArray}</li>
 <li id="choices">C:${questionsArray[1].choicesArray}</li>` */
-
 
 // Start off with 15 seconds on the timer
 // use timeleft constant for function that switches hourglass after 15 seconds is up if i have time
@@ -148,6 +162,5 @@ function play2() {
   audio.play();
 } */
 //if question...is active then run timer, if timer stops disable question and show next question
-
 
 //function showQuestion(index) {}

@@ -9,12 +9,9 @@ build an array of questions with objects:
   
 <!-- *********************************************************** -->
 ## Event Listeners
-### continue button, start button, prev arrow icon button, next arrow icon button, home icon button-reset game function will be attached
+### continue button, start button home icon button-reset game function will be attached
 ## continue button for switch
-## event listeners for category characters button-starts game with only those questions
-## event listeners for category showFacts button-starts game with only those questions
-## event listeners for category plotlines button-starts game with only those questions
-## event listeners for category guest stars button-starts game with only those questions
+
 ## event listeners for home icon button-that sends user back to home from score page and runs rest gmae function
 ## event listeners for next arrow buttondisplays next Question
 ## event listeners for see score button-populates score page
