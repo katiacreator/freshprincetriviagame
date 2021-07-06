@@ -142,3 +142,7 @@ body{
   color: var(--aqua);
   font-size: 24px
 }
+
+.hide{
+  display: none;
+}

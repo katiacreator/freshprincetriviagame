@@ -25,10 +25,15 @@ append how many they got right out of total to stats component as MVP
 <!-- *********************************************************** -->
 ## Functions
 --init
---setTimer and/or interval depending on animation, game play, 
+--setTimer and/or interval depending on animation, game play,
+//if question...is active then run timer, if timer reaches 0 disable that question and show next question 
 --scoreEval
 --checkAnswerEval-changes score, plays sound if right-kazoo or wrong-buzz, shows msg and gif
 -displayMsg(div)
 -displayQuestionImgDIV
 --displayNextQuestion
 --toggle classes to show and hide question info once quiz starts
+## Goals
+use this example to refactor css styling once game is fully functional
+    https://tailwindcomponents.com/component/nonsense-card
+    https://tailwindcomponents.com/component/fully-interactive-frames-slider
