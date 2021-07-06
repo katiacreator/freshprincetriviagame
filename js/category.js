@@ -32,15 +32,16 @@ let cardHtml = ""
 categoryArray.forEach((category) => {
     //console.log('category: ', category);
 cardHtml = `<!-- each card will flip all will have the same size but different colors -->
- <section id="category-card-grid" class="row-1 flipCard"> 
+ <section id="category-card-grid" class="cardBod"> 
   <!-- Card Grid will be 1 row 5 columns -->
-   <section class="category-card column1">
-    <section id="icon">
+   <section class="category-card">
+    <section id="icon" class="category-card-front>
       ${category.icon}
+      <h3>${category.category}</h3>
     </section>
-    <section id="back">
-      ${category.category}
-      ${category.description}
+    <section class="category-card-back">
+    <h3>${category.category}</h3>
+      <p>${category.description}</p>
     </section>
   </section>
 </section> 
