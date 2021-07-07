@@ -1,6 +1,5 @@
 console.log("we live");
-const mainContent = document.querySelector("#content");
-console.log("mainContent: ", mainContent);
+
 
 //* Quiz Cards Object */
 const questionArray = [
@@ -55,15 +54,9 @@ const questionArray = [
   },
 ];
 //console.log("questionsArray: ", questionsArray);
-//console.log(`questionsArray[0].choicesArray, this data does not show in for each:`, questionsArray[0].choicesArray); //this is what i want access to specifically but for every question choicesArray: ["Carlton", "Chuck", "Charleston"]
-/* questionsArray.forEach((question) => {
-  let choices = question.choicesArray;
-  console.log(`choices = question.choicesArray does show inside foreach`, choices); //this is what i need but for every question 
-}); */
 
-/* for(const choice in questionsArray.choicesArray){
-  console.log(`${choice}: ${questionsArray.choicesArray[choice]}`)
-} */
+const mainContent = document.querySelector("#content");
+console.log("mainContent: ", mainContent);
 
 //HTML Template Literal to append to content
 let markup = `<section id="countdown">
@@ -76,20 +69,22 @@ let markup = `<section id="countdown">
 <section id="category"></section>
 <section id="question"></section>
 <section id="choices">
+<p class="choice"></p>
+<p class="choice"></p>
+<p class="choice"></p>
   </section>
+  <button id="startBtn">START</button>
 </section>`;
 
 console.log(markup)
 mainContent.innerHTML = markup;
-let sectionContent = document.querySelector("#question-section");
-console.log("sectionContent: ", sectionContent);
-const questionSection = document.querySelector("#question-section");
-console.log("questionSection: ", questionSection);
-const question = document.querySelector("#question");
-console.log(question);
+/* ************************************************************************************ */
+
+let questionContent = document.querySelector("#question-section");
+console.log("questionContent: ", questionContent);
 const choiceSection = document.querySelector("#choices");
 console.log(choiceSection);
- let choiceContent = document.querySelector("#choices");
+let choiceContent = document.querySelector("#choices");
 console.log("choiceContent: ", choiceContent); 
 
 let questCount = 0;
@@ -97,44 +92,10 @@ let questNum = 1;
 let score = 0;
 let counter;
 let questionHtml = "";
+let choicesHtml = ""
 
-function showQuestion(questNum) {
-  //questionsArray.forEach((question) => {
-  //console.log(question)//confirms it is looping through the objects to pull data needed
-  //console.log(question);
-  //for( let i = 0; i < question; i++){
-  questionHtml = `<br><section id="category-icon">${questionArray[questNum].img}</section>
-      <section id="category">${questionArray[questNum].category}</section>
-      <section id="question">${questionArray[questNum].question}</section>
-      </section>`;
-  //console.log(questionHtml); //-this is working
-  //console.log("questionHtml: ", questionHtml);
-  sectionContent.innerHTML = questionHtml;
-  //console.log(sectionContent);
-  console.log(questionArray[questNum].choicesArray[0])
-  const choicesHtml = `<p class="choices">A:${questionArray[questNum].choicesArray[0]}</p>
-  <p class="choices">B:${questionArray[questNum].choicesArray[1]}</p>
-  <p class="choices">C:${questionArray[questNum].choicesArray[2]}</p>`;
-  console.log("choicesHtml: ", choicesHtml);
-  choiceContent.innerHTML = choicesHtml
-  console.log(choiceContent);
-}
-
-for( let i=0; i < questionArray.length; i++){
-  showQuestion(questNum)
-}
-
-
-//showQuestions()
-// setTimeout(appendQuestions(), 10000)
-/*   `<li id="choices">A:${questionsArray[0].choicesArray}</li>
-<li id="choices">B:${questionsArray[1].choicesArray}</li>
-<li id="choices">C:${questionsArray[1].choicesArray}</li>` */
-
-// Start off with 15 seconds on the timer
-// use timeleft constant for function that switches hourglass after 15 seconds is up if i have time
-//let countdownEl = document.getElementById('countdown')
-let timerEl = document.querySelector(".far");
+function questionTimer()
+{let timerEl = document.querySelector(".far");
 //console.log('timerEl: ', timerEl);
 let timeLeft = 15;
 //console.log('timeLeft: ', timeLeft);
@@ -152,6 +113,30 @@ let timer = setInterval(function () {
     //show next Question
   }
 }, 1000);
+}
+
+function showQuestion(questNum) {
+  questionHtml = `<br><section id="category-icon">${questionArray[questNum].img}</section>
+  <section id="category">${questionArray[questNum].category}</section>
+  <section id="question">${questionArray[questNum].question}</section>
+  </section>`;
+  choicesHtml = `<p class="choices">A:${questionArray[questNum].choicesArray[0]}</p>
+      <p class="choices">B:${questionArray[questNum].choicesArray[1]}</p>
+      <p class="choices">C:${questionArray[questNum].choicesArray[2]}</p>`;
+      console.log("choicesHtml: ", choicesHtml);
+  questionContent.innerHTML = questionHtml;
+  choiceContent.innerHTML = choicesHtml
+  console.log(questionContent, choiceContent);
+}
+showQuestion(questNum)
+/* for( let i=0; i < questionArray.length; i++){
+  showQuestion(questNum)
+} */
+
+
+
+
+
 //console.log('timer: ', timer);
 
 /*  add play ticking sound
