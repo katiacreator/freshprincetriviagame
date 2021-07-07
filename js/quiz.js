@@ -21,7 +21,7 @@ const questionArray = [
   },
   {
     id: 3,
-    question: "2What is Will's cousin's name that he is always berating?",
+    question: "3What is Will's cousin's name that he is always berating?",
     choicesArray: ["three", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "PLOTLINES",
@@ -29,7 +29,7 @@ const questionArray = [
   },
   {
     id: 4,
-    question: "2What is Will's cousin's name that he is always berating?",
+    question: "4What is Will's cousin's name that he is always berating?",
     choicesArray: ["four", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "BEHIND THE CAMERA",
@@ -37,7 +37,7 @@ const questionArray = [
   },
   {
     id: 5,
-    question: "2What is Will's cousin's name that he is always berating?",
+    question: "5What is Will's cousin's name that he is always berating?",
     choicesArray: ["five", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "WILL'S RELATIONSHIPS",
@@ -49,20 +49,16 @@ const questionArray = [
 const mainContent = document.querySelector("#content");
 //console.log("mainContent: ", mainContent);
 
-let choiceBtn = document.querySelector(".choiceA");
-console.log('choiceBtn: ', choiceBtn);
-let choiceBBtn = document.querySelector(".choiceB");
-console.log('choiceBBtn: ', choiceBBtn);
-let choiceCBtn= document.querySelector(".choiceC");
-console.log('choiceCEl: ', choiceCBtn);
+let choiceABtn;
+let choiceBBtn;
+let choiceCBtn;
 
 /* OTHER VARIABLES */
 let questionNum = 0;
 let score = 0;
 let timerEl;
-//console.log('timerEl: ', timerEl);
 let timeLeft = 15;
-//console.log('timeLeft: ', timeLeft);
+let timerIntervalId;
 
 /****************** */ //HTML Template Literal to append to content*********************** */
 let markup = `
@@ -73,10 +69,8 @@ mainContent.innerHTML = markup;
 
 
 const startBtn = document.querySelector("#startBtn");
-console.log("startBtn: ", startBtn);
 /* EVENT LISTENERS */
 //This starts the entire quiz process with clicking the start button
-//startBtn.addEventListener("click", startQuiz);
 startBtn.addEventListener("click", startQuiz);
 function startQuiz() {
   console.log("has been clicked");
@@ -89,7 +83,7 @@ function startQuiz() {
 function showQuestion(questionNum) {
   markup = `<section id="countdown">
   <section id="time-left">
- <span><h3 id="timer">Time Left: 15</h3></span>
+ <span><h3 id="timer"></h3></span>
   </section>
   </section>
   <section id="question-section">
@@ -100,17 +94,41 @@ function showQuestion(questionNum) {
   <button class="choiceB btn">B: ${questionArray[questionNum].choicesArray[1]}</button>
   <button class="choiceC btn">C: ${questionArray[questionNum].choicesArray[2]}</button>`;
   mainContent.innerHTML = markup;
-  //console.log(choiceCBtn)
   timerEl = document.querySelector("#timer");
   questionTimer();
+  choiceABtn = document.querySelector(".choiceA");
+  choiceABtn.addEventListener('click', ()=> {
+    if (timerIntervalId) {
+    clearInterval(timerIntervalId)
+    setNextQuestion()
+  }
+  })
+  choiceBBtn = document.querySelector(".choiceB");
+  choiceBBtn.addEventListener('click', ()=> {
+    if (timerIntervalId) {
+    clearInterval(timerIntervalId)
+    setNextQuestion()
+  }
+  })
+  choiceCBtn = document.querySelector(".choiceC");
+  choiceCBtn.addEventListener('click', ()=> {
+    if (timerIntervalId) {
+    clearInterval(timerIntervalId)
+    setNextQuestion()
+  }
+  })
 }
+
 
 //Timer Function-run this every 15 seconds or after each choice is clicked
 function questionTimer() {
   console.log("questionTimer function is bein run")
   //setInterval for a tick
   timeLeft = 15;
-  let timerIntervalId = setInterval(function () {
+  // if (timerIntervalId) {
+  //   clearInterval(timerIntervalId)
+  // }
+  timerIntervalId = setInterval(function () {
     timerEl.textContent = `Time Left:${timeLeft}`;
     timeLeft -= 1;
     console.log("timeLeft: (is a number not a string/text) ", timeLeft);
@@ -123,35 +141,36 @@ function questionTimer() {
     //add play ticking sound
     if (timeLeft === 0) {
       timerEl.textContent = ` :${0}`;
-      //evaluateAnswerGiven(e);
+      score;
+      console.log('score: ', score);
       setNextQuestion()
     }
   }, 15500);
 }
 
 //if  a choice has been made or time is up then set next question
-function evaluateAnswerGiven(e) {//this function is not giving e
-  console.log("this function is activated")
-  if (timeLeft === 0) {
-    score;
-    setNextQuestion();
-  } else if(e.target !== null && e.target === questionArray[questionNum].answer) {
+function evaluateAnswerGiven() {//this function is called but isn't giving e
+  console.log("evalAnswer function is activated")
+  
+ if(e.target.textContent !== null && e.target.textContent === questionArray[questionNum].answer) {
     score++; //score stays the same, no points awarded
     setNextQuestion(); //moves on to next question
+  } else if (evt.target !== null && evt.target !== questionArray[questionNum].answer){
+    score;
+    console.log('score: ', score);
+    setNextQuestion()
   }
 }
 
 
 //this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz-when do i call this
-function setNextQuestion() {
+function setNextQuestion() {//this function is running correctly
   console.log("setnextQuestion function is bein run")
-
-  if (questionNum <= questionArray.length) {
+  if (questionNum < 5) {
     questionNum++;
   showQuestion(questionNum);
-    //console.log("shows next button to click to next question");
   } else {
-    alert(`Game Over!! Your final score is ${score}`);
+    alert(`There are no more questions`);
     // gameOver();
   }
 }
