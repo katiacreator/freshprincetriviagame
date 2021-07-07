@@ -79,16 +79,15 @@ function evaluateAnswerGiven(e) {
 }
 
 function setNextQuestion() {
-    // resetState();
+    // resetState();goes here?
     questionNum++
     showQuestion(questionNum);
 }
 
 
   //this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz-when do i call this
-function checkGameState(){
-    if (questionNum >= questionArray.length ) {
-    //   resetState();
+function resetState(){
+    if (questionNum < questionArray.length ) {
      setNextQuestion()
           //console.log("shows next button to click to next question");
     } else {
