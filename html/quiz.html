@@ -10,14 +10,28 @@
     <!-- <link rel="stylesheet" href="/css/score.css"> -->
     <!-- <script defer src="/js/index.js"></script> -->
     <!-- <script defer src="/js/category.js"></script> -->
-    <script defer src="/js/timer.js"></script>
+    <script defer src="/js/simplequiz.js"></script>
     <!-- <script defer src="/js/score.js"></script> -->
     <title>Fresh Prince Trivia Game</title>
   </head>
   <body>
     <!-- div for question img -->
     <main id="content">
-      
+      <section id="countdown">
+        <section id="time-left">
+        <i class="far fa-hourglass" id="empty"></i>
+        </section>
+        </section>
+        <section id="question-section">
+        <section id="category-icon"><i class="far fa-heart"></i></section>
+        <section id="category">CATEGORY</section>
+        <section id="question">QUESTION</section>
+        </section>
+        <button class="choiceA btn">CHOICE A</button>
+        <button class="choiceB btn">CHOICE B</button>
+        <button class="choiceC btn">CHOICE C</button>
+        <button id="startBtn" class="btn">START</button>
+</section>
     </main>
   </body>
 </html>

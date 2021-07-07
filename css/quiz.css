@@ -24,3 +24,33 @@ body{
   align-items: center;  /* centers vertically in row layout */
   flex-direction: column; 
 }
+
+
+#content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 500px;
+  padding: 200px;
+  border: solid red 5px;
+}
+
+.btn{
+  border: solid black 8px;
+  border-radius: 15px;
+  width: 500px;
+  height: 100px;
+  font-size: 28px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.btn:hover{
+  background-color: var(--cotton-candy);
+}
+
+#startBtn:hover{
+background-color: red;
+}
