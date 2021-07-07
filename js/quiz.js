@@ -55,14 +55,14 @@ const questionArray = [
 ];
 //to append html markup
 const mainContent = document.querySelector("#content");
-console.log("mainContent: ", mainContent);
+//console.log("mainContent: ", mainContent);
 
-/* const choiceBtn = document.querySelector(".choiceA");
+let choiceBtn = document.querySelector(".choiceA");
 console.log('choiceBtn: ', choiceBtn);
-const choiceBBtn = document.querySelector(".choiceB");
+let choiceBBtn = document.querySelector(".choiceB");
 console.log('choiceBBtn: ', choiceBBtn);
-const choiceCBtn= document.querySelector(".choiceC");
-console.log('choiceCEl: ', choiceCBtn); */
+let choiceCBtn= document.querySelector(".choiceC");
+console.log('choiceCEl: ', choiceCBtn);
 
 /* OTHER VARIABLES */
 let questionNum = 0;
@@ -71,24 +71,18 @@ let timerEl;
 //console.log('timerEl: ', timerEl);
 let timeLeft = 15;
 //console.log('timeLeft: ', timeLeft);
-//HTML Template Literal to append to content
+
+/****************** */ //HTML Template Literal to append to content*********************** */
 let markup = `
 <button id="startBtn">START</button>
 </section>`;
-console.log(markup);
+//console.log(markup);
 mainContent.innerHTML = markup;
 
-const questionContent = document.querySelector("#question-section");
-//console.log("questionContent: ", questionContent);
-const choiceContent = document.querySelector("#choices");
-//console.log("choiceContent: ", choiceContent);
 
 const startBtn = document.querySelector("#startBtn");
-console.log("startBtn: ", startBtn);
+//console.log("startBtn: ", startBtn);
 /* EVENT LISTENERS */
-
-/* FUNCTIONS */
-/* ************************************************************************************************************* */
 //This starts the entire quiz process with clicking the start button
 //startBtn.addEventListener("click", startQuiz);
 startBtn.addEventListener("click", startQuiz);
@@ -97,11 +91,13 @@ function startQuiz() {
   showQuestion(questionNum); //function will append first question
 }
 
+/* FUNCTIONS */
+/* ********************************************************************************** */
 //appends question to main content//need to get all questions to append
 function showQuestion(questionNum) {
   markup = `<section id="countdown">
   <section id="time-left">
-  <i class="far fa-hourglass" id="empty"></i><span><h3 id="timer"></h3></span>
+ <span><h4 id="timer"></h4></span>
   </section>
   </section>
   <section id="question-section">
@@ -113,30 +109,29 @@ function showQuestion(questionNum) {
   <button class="choiceB btn">B: ${questionArray[questionNum].choicesArray[1]}</button>
   <button class="choiceC btn">C: ${questionArray[questionNum].choicesArray[2]}</button>`;
   mainContent.innerHTML = markup;
+  //console.log(choiceCBtn)
   timerEl = document.querySelector("#timer");
-
   questionTimer();
 }
 
 //Timer Function-run this every 15 seconds or after each choice is clicked
 function questionTimer() {
+  console.log("questionTimer function is bein run")
   //setInterval for a tick
   timeLeft = 15;
   let timerIntervalId = setInterval(function () {
     timerEl.textContent = ` :${timeLeft}`;
     timeLeft -= 1;
-
-    console.log("timeLeft: ", timeLeft);
+    console.log("timeLeft: (is a number not a string/text) ", timeLeft);
   }, 1000);
-  //setInter
-
+  //setInterval
+  
   setTimeout(function () {
+    //console.log("setTimeout function is bein run")
     clearInterval(timerIntervalId);
     //add play ticking sound
     if (timeLeft === 0) {
-      //add play buzzer sound
       timerEl.textContent = ` :${0}`;
-      //run choiceEval function
       //evaluateAnswerGiven(e);
       setNextQuestion()
     }
@@ -144,28 +139,25 @@ function questionTimer() {
 }
 
 //if  a choice has been made or time is up then set next question
-function evaluateAnswerGiven(e) {
-  if (e.target !== null && e.target === questionArray[questionNum].answer) {
-    score++;
+function evaluateAnswerGiven(e) {//this function is not giving e
+  console.log("this function is activated")
+  if (timeLeft === 0) {
+    score;
     setNextQuestion();
-  } else if (e.target === null && timeLeft <= 0) {
-    score; //score stays the same, no points awarded
+  } else if(e.target !== null && e.target === questionArray[questionNum].answer) {
+    score++; //score stays the same, no points awarded
     setNextQuestion(); //moves on to next question
-  } else {
-    showQuestion(questionNum); //stay on current question
   }
 }
 
-function setNextQuestion() {
-  // resetState();goes here?
-  questionNum++;
-  showQuestion(questionNum);
-}
 
 //this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz-when do i call this
-function resetState() {
-  if (questionNum < questionArray.length) {
-    setNextQuestion();
+function setNextQuestion() {
+  console.log("setnextQuestion function is bein run")
+
+  if (questionNum <= questionArray.length) {
+    questionNum++;
+  showQuestion(questionNum);
     //console.log("shows next button to click to next question");
   } else {
     alert(`Game Over!! Your final score is ${score}`);
@@ -173,7 +165,7 @@ function resetState() {
   }
 }
 
-//console.log('timer: ', timer);
+
 
 /*  add play ticking sound
 function play2() {
@@ -182,6 +174,4 @@ function play2() {
   var audio = new Audio(" ");
   audio.play();
 } */
-//if question...is active then run timer, if timer stops disable question and show next question
 
-//function showQuestion(index) {}
