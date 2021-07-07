@@ -35,41 +35,57 @@ body{
   transform: translate(-50%, -50%);
   height: 500px;
   width: 500px;
-  padding: 150px;
-  border: solid red 5px;
+  padding: 180px;
+  border: solid purple 15px;
+  border-radius: 25px;
+  background-color: white;
 }
 
 #countdown{
-    border: red solid 3px;
-    height: 100px;
+    height: 50px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 500px;
-    padding: 20px;
-    margin: 10px;
+    width: 700px;
+    padding-right: 40px;
+    margin-left: 90px;
+    margin-bottom: 15px;
 }
 
 #question-section{
-  border: red solid 3px;
- padding: 20px;
+border: aqua solid 8px;
+border-radius: 15px;
+ width: 700px;
+ height: 200px;
+ padding: 40px;
+ display: block;
+ align-items: center;
+ justify-content: center;
+ background-color: aqua
+}
+
+#category{
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .btn{
-  border: solid red 8px;
+  border: solid var(--aqua) 8px;
   border-radius: 15px;
-  width: 500px;
+  width: 800px;
   height: 100px;
-  font-size: 28px;
+  font-size: 48px;
+  display: block;
+  align-items: center;
+  justify-content: center;
   margin: 10px;
   padding: 20px;
 }
 
 .btn:hover{
-  background-color: var(--cotton-candy);
+  background-color: var(--aqua);
 }
 
-#startBtn:hover{
-background-color: red;
-}

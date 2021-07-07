@@ -5,7 +5,6 @@
 const questionArray = [
   {
     id: 1,
-    img: `<i class= "fas fa-signature"></i>`,
     question: "1What is Will's cousin's name that he is always berating?",
     choicesArray: ["Carlton", "Chuck", "Charleston"],
     answer: "Carlton",
@@ -14,8 +13,6 @@ const questionArray = [
   },
   {
     id: 2,
-    //img: url(jazz.jpg), //link
-    img: `<i class="far fa-star"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
     choicesArray: ["two", "Chuck", "Charleston"],
     answer: "Carlton",
@@ -24,8 +21,6 @@ const questionArray = [
   },
   {
     id: 3,
-    //questionImg: url(jazz.jpg), //link
-    img: `<i class="fas fa-network-wired"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
     choicesArray: ["three", "Chuck", "Charleston"],
     answer: "Carlton",
@@ -34,8 +29,6 @@ const questionArray = [
   },
   {
     id: 4,
-    //questionImg: url(jazz.jpg), //link
-    img: `<i class="fas fa-film"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
     choicesArray: ["four", "Chuck", "Charleston"],
     answer: "Carlton",
@@ -44,8 +37,6 @@ const questionArray = [
   },
   {
     id: 5,
-    //questionImg: url(jazz.jpg), //link
-    img: `<i class="far fa-heart"></i>`,
     question: "2What is Will's cousin's name that he is always berating?",
     choicesArray: ["five", "Chuck", "Charleston"],
     answer: "Carlton",
@@ -53,6 +44,7 @@ const questionArray = [
     score: 0,
   },
 ];
+
 //to append html markup
 const mainContent = document.querySelector("#content");
 //console.log("mainContent: ", mainContent);
@@ -74,14 +66,14 @@ let timeLeft = 15;
 
 /****************** */ //HTML Template Literal to append to content*********************** */
 let markup = `
-<button id="startBtn">START</button>
+<button id="startBtn" class="btn">START</button>
 </section>`;
 //console.log(markup);
 mainContent.innerHTML = markup;
 
 
 const startBtn = document.querySelector("#startBtn");
-//console.log("startBtn: ", startBtn);
+console.log("startBtn: ", startBtn);
 /* EVENT LISTENERS */
 //This starts the entire quiz process with clicking the start button
 //startBtn.addEventListener("click", startQuiz);
@@ -97,11 +89,10 @@ function startQuiz() {
 function showQuestion(questionNum) {
   markup = `<section id="countdown">
   <section id="time-left">
- <span><h4 id="timer"></h4></span>
+ <span><h3 id="timer">Time Left: 15</h3></span>
   </section>
   </section>
   <section id="question-section">
-  <section id="category-icon">${questionArray[questionNum].img}</section>
   <section id="category">${questionArray[questionNum].category}</section>
   <section id="question">${questionArray[questionNum].question}</section>
   </section>
@@ -120,7 +111,7 @@ function questionTimer() {
   //setInterval for a tick
   timeLeft = 15;
   let timerIntervalId = setInterval(function () {
-    timerEl.textContent = ` :${timeLeft}`;
+    timerEl.textContent = `Time Left:${timeLeft}`;
     timeLeft -= 1;
     console.log("timeLeft: (is a number not a string/text) ", timeLeft);
   }, 1000);
@@ -135,7 +126,7 @@ function questionTimer() {
       //evaluateAnswerGiven(e);
       setNextQuestion()
     }
-  }, 15000);
+  }, 15500);
 }
 
 //if  a choice has been made or time is up then set next question
