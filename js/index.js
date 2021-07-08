@@ -21,7 +21,7 @@ console.log('continueBtn: ', continueBtn);
 continueBtn.addEventListener("click", () => {
   console.log("this button has been clicked")
   //display category.html goes here
-  location.href = "category.html"
+  location.href = "html/category.html"
 })
 // mainContent.setAttribute("class", "animated__animated animate_slideInUp")
 
