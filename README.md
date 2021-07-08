@@ -22,14 +22,14 @@
 ### - Will's Relationships: Let's face it, Will was a ladies man! Can you correctly match their names and relationship status with Will?
 #
 ## So, why this show...this game?
-I decided to learn to code after watching my 1 year old niece get angry at my ipad because the matching game she was playing wouldn't just play the cat animation everytime she touched the screen. I was curious how games are even built and thought if it were simple enough I could build her a game that was at her level of taste and sophistication! I also wanted to challenge myself so a matching game would be too simple. I live in Will Smith's old neighborhood so I instantly thought of Fresh Prince when I needed a theme for my quiz game.
+### I decided to learn to code after watching my 1 year old niece get angry at my ipad because the matching game she was playing wouldn't just play the cat animation everytime she touched the screen. I was curious how games are even built and thought if it were simple enough I could build her a game that was at her level of taste and sophistication! I also wanted to challenge myself so a matching game would be too simple. I live in Will Smith's old neighborhood so I instantly thought of Fresh Prince when I needed a theme for my quiz game.
 #
 ## 
-[Initial Home Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Home Game Screen.png" alt = "user profile picture" width = "400"/>
+### [Initial Home Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Home Game Screen.png" alt = "user profile picture" width = "400"/>
 #
-[Initial Quiz Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Quiz screens.png" alt = "user profile picture" width = "400"/>
+### [Initial Quiz Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Quiz screens.png" alt = "user profile picture" width = "400"/>
 #
-[Initial Score Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Score Page.png" alt = "user profile picture" width = "400"/>
+### [Initial Score Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Score Page.png" alt = "user profile picture" width = "400"/>
 #
 ## Final Screen Layouts
 ...
