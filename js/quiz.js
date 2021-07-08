@@ -97,11 +97,16 @@ function showQuestion(questionNum) {
   timerEl = document.querySelector("#timer");
   questionTimer();
   choiceABtn = document.querySelector(".choiceA");
-  choiceABtn.addEventListener('click', ()=> {
+  choiceABtn.addEventListener('click', (e)=> {
     if (timerIntervalId || timeOutId) {
       clearInterval(timerIntervalId)
       clearTimeout(timeOutId)
-      setNextQuestion()
+      evaluateAnswerGiven(e)
+      //setNextQuestion()
+      //what i need to happen here:
+      //disable the other buttons so another answer can't be clicked-do i  need this if it is going straight to next function
+      //compare choice to actual answer to log score
+      //then set Next Question
     }
 
     /* if(e.target.textContent === questionArray[questionNum].answer) {
@@ -116,20 +121,22 @@ function showQuestion(questionNum) {
   })
 
   choiceBBtn = document.querySelector(".choiceB");
-  choiceBBtn.addEventListener('click', ()=> {
+  choiceBBtn.addEventListener('click', (e)=> {
     if (timerIntervalId || timeOutId) {
       clearInterval(timerIntervalId)
       clearTimeout(timeOutId)
-      setNextQuestion()
+      evaluateAnswerGiven(e)
+      //setNextQuestion()
     }
   })
 
   choiceCBtn = document.querySelector(".choiceC");
-  choiceCBtn.addEventListener('click', ()=> {
+  choiceCBtn.addEventListener('click', (e)=> {
     if (timerIntervalId || timeOutId) {
       clearInterval(timerIntervalId)
       clearTimeout(timeOutId)
-      setNextQuestion()
+      evaluateAnswerGiven(e)
+      //setNextQuestion()
     }
   })
 }
@@ -162,7 +169,21 @@ function questionTimer() {
   }, 15500);
 }
 
+//this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz-when do i call this
+function setNextQuestion() {//this function is running correctly
+  console.log("setnextQuestion function is bein run")
+  if (questionNum < questionArray.length - 1) {
+    questionNum++;
+  showQuestion(questionNum);
+  } else {
+    //clearInterval(timerIntervalID)
+    timerEl.textContent = `GAME OVER!!!!!!`;
+    // gameOver();
+  }
+}
+
 // choiceBBtn.addEventListener('click', evaluateAnswerGiven(e))
+
 //if  a choice has been made or time is up then set next question
 function evaluateAnswerGiven(e) {//this function is called but isn't giving e
   console.log("evalAnswer function is activated")
@@ -178,17 +199,7 @@ function evaluateAnswerGiven(e) {//this function is called but isn't giving e
 }
 
 
-//this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz-when do i call this
-function setNextQuestion() {//this function is running correctly
-  console.log("setnextQuestion function is bein run")
-  if (questionNum < questionArray.length - 1) {
-    questionNum++;
-  showQuestion(questionNum);
-  } else {
-    timerEl.textContent = `GAME OVER!!!!!!`;
-    // gameOver();
-  }
-}
+
 
 
 
