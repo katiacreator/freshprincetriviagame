@@ -59,12 +59,12 @@ let score = 0;
 let timerEl;
 let timeLeft = 15;
 let timerIntervalId;
+let timeOutId;
 
 /****************** */ //HTML Template Literal to append to content*********************** */
 let markup = `
 <button id="startBtn" class="btn">START</button>
 </section>`;
-//console.log(markup);
 mainContent.innerHTML = markup;
 
 
@@ -97,28 +97,30 @@ function showQuestion(questionNum) {
   timerEl = document.querySelector("#timer");
   questionTimer();
   choiceABtn = document.querySelector(".choiceA");
-  choiceABtn.addEventListener('click', ()=> {
-    if (timerIntervalId) {
-    clearInterval(timerIntervalId)
-    setNextQuestion()
-  }
+  choiceABtn.addEventListener('click', (e)=> {
+    console.log(e.target.textContent)
+    resetTimer()
   })
   choiceBBtn = document.querySelector(".choiceB");
-  choiceBBtn.addEventListener('click', ()=> {
-    if (timerIntervalId) {
-    clearInterval(timerIntervalId)
-    setNextQuestion()
-  }
+  choiceBBtn.addEventListener('click', (e)=> {
+    console.log(e.target.textContent)
+    resetTimer()
   })
   choiceCBtn = document.querySelector(".choiceC");
-  choiceCBtn.addEventListener('click', ()=> {
-    if (timerIntervalId) {
-    clearInterval(timerIntervalId)
-    setNextQuestion()
-  }
+  choiceCBtn.addEventListener('click', (e)=> {
+    console.log(e.target.textContent)
+    resetTimer()
   })
 }
 
+//put the clear intervals/timeouts in this function to make the code more DRY
+function resetTimer(){
+  if (timerIntervalId || timeOutId) {
+    clearInterval(timerIntervalId)
+    clearTimeout(timeOutId)
+    setNextQuestion()
+  }
+}
 
 //Timer Function-run this every 15 seconds or after each choice is clicked
 function questionTimer() {
@@ -131,11 +133,11 @@ function questionTimer() {
   timerIntervalId = setInterval(function () {
     timerEl.textContent = `Time Left:${timeLeft}`;
     timeLeft -= 1;
-    console.log("timeLeft: (is a number not a string/text) ", timeLeft);
+    //console.log("timeLeft: (is a number not a string/text) ", timeLeft);
   }, 1000);
   //setInterval
   
-  setTimeout(function () {
+  timeOutId = setTimeout(function () {
     //console.log("setTimeout function is bein run")
     clearInterval(timerIntervalId);
     //add play ticking sound
