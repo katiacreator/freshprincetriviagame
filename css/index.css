@@ -8,9 +8,9 @@
 }
 
 body{
-  background-color: var(--bitter-lime);
+  background-color: var(--cotton-candy);
   color: var(--black);
-  font-size: 44px;
+  font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -31,21 +31,18 @@ body{
   height: 500px;
   width: 500px;
   padding: 180px;
-  border: solid purple 15px;
-  border-radius: 25px;
-  background-color: white;
+  border: solid purple 5px;
+  /* border-radius: 25px; */
+  background-color: var(--bitter-lime);
 }
-.img {
-  height: 500px;
-  width: 500px;
-  background: rgba(91, 10, 124, 0.717);
-  margin: 100px;
-  padding: 50px;
-  border: solid red 3px;
-}
-/* 
 
-#logo-card{
+.img {
+  
+  max-width:100%;
+  height:auto;
+  background: rgba(91, 10, 124, 0.717);
+  margin: 20px;
+  padding: 40px;
   border: solid red 3px;
 }
 
@@ -55,36 +52,28 @@ max-width: 500px;
 color: black;
 text-align: center;
 margin: auto;
-} */
+}
 
 
-
-
-/* .btn {
-  background-color: var(--bitter-lime);
-  color: white;
-  outline: 0;
-  border: solid red 2px;
+.btn {
+  background-color: var(--aqua);
+  color: black;
+  border: solid var(--bitter-lime) 8px;
   border-radius: 15px;
   display: inline-block;
   padding: 12px 16px;
-  font-size: 18px;
+  font-size: 28px;
   text-align: center;
-  cursor: pointer;
-  opacity: 1;
-}
-
-a {
   text-decoration: none;
-  font-size: 22px;
-  color: black;
+  cursor: pointer;
+  
 }
 
-.btn:hover , a:hover{
+.btn:hover{
   background-color: var(--aqua);
   animation: pulse;
-  animation-duration: .9s; 
-} */
+  animation-duration: .5s; 
+} 
 
 
 

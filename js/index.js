@@ -1,21 +1,22 @@
 console.log("we live!");
 //* Title Card Object */
 const homeScreen = {
-  img: `<img src="/assets/freshprince/freshprince-logo.png" alt="game logo placeholder" class="img">`,
+  img: `<img src="assets/luigi-lacarelli-images/luigi-lucarelli-fresh-prince-lineup-1.jpeg" alt="fresh prince cartoon family lineup" class="img">`,
+  title: `<h1 id="game-title">FRESH PRINCE OF BEL-AIR QUIZ GAME</h1>`,
   instructions: `<h3 class="instructions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vero mollitia, minima impedit nobis cumque veniam asperiores vitae nesciunt quam!</h3>`,
-  continueBtn: `<p><button id="continueBtn"><a href="categories.html"><i class="fas fa-long-arrow-alt-right btn">CONTINUE</i></a></button></p>`,
+  continueBtn: `<a href="/category.html" class="animated__animated animate__pulse btn" id="continueBtn">CONTINUE</a>`
 };
 
-const markup = `<!-- div for logo img -->
-<section id="logo-card" class="logo-card">
+const markup = `
 ${homeScreen.img}
-<h1>TRIVIA GAME</h1>
+${homeScreen.title}
 ${homeScreen.instructions}
-<!-- this is a button to go to categories screen -->
-${homeScreen.continueBtn}
-</section>`;
+${homeScreen.continueBtn}`;
 
 console.log('markup: ', markup);
-const content = document.getElementById("content");
-content.innerHTML = markup
-console.log(content)
+const mainContent = document.getElementById("content");
+mainContent.innerHTML = markup
+console.log(mainContent)
+
+// mainContent.setAttribute("class", "animated__animated animate_slideInUp")
+

@@ -1,7 +1,7 @@
 I. Home Screen-index.html
-     A. Title Card - game logo card on hover flips to show instructions
+     A. Title Card - game logo card does animation before showing instructions card
     B. Instructions Card - gives instructions for the game, "click next to view categories"
-     i. a right arrow icon next button - will expand by 50% on hover, click event function needed to send to next page
+     i. some animation to get to next screen, maybe a button
     C. Categories Card Screen- card grid of 5 cards
         i. different icons for each category card for MVP
         1. star - GUEST STARS: from celebrity appearances to crossover tv character appearances
@@ -13,7 +13,6 @@ I. Home Screen-index.html
          iii. different img of characters for each category-BONUS FEATURE
 
 II. Game Screen - game.html
-
     A. Category Card- card that shows the icon of the category that expands to the left revealing the question div
     B. Question Card- this card will have a timer, the question, the 3 choices, and next arrow button set up as a grid to make click events easier
         i. sand timer icon for the timer div with :15 as the text for each question that appears
@@ -26,5 +25,4 @@ II. Game Screen - game.html
         v. after all questions have been answered, page turns to scores screen
 
 III. Score Screen - score.html
-
     A. Score Stats Component- how many total, how many per category, and percentage
