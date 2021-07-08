@@ -3,42 +3,40 @@ console.log("we live");
 const categoryArray = [
   {
     category: "GUEST STARS",
-    description: "Lorem1 ipsum dolor sit amet.",
+    description: "A certain actress became Will's real life love interest. Can you guess who?",
   },
   {
     category: "MAIN PLOTLINES",
-    description: "Lorem1 ipsum dolor sit amet.",
+    description: "Most of the show was filled with hilarious moments, some poignant, some tragic then funny again(again, poor Trevor!)",
   },
   {
     category: "BEHIND THE CAMERA",
-    description: "Lorem1 ipsum dolor sit amet.",
+    description: "For the real stans with way too much time on their hands, can you guess some of these very specific show production facts like what network the show was on, that b-boy grip from Episode 67?...ok maybe not that specific!",
   },
   {
     category: "CHARACTER NAMES",
-    description: "Lorem1 ipsum dolor sit amet.",
+    description: "Super easy! Can you name that iconic character from the show?!",
   },
   {
     category: "WILL'S RELATIONSHIPS",
-    description: "Lorem1 ipsum dolor sit amet.",
+    description: "Let's face it, Will was a ladies man! Can you correctly match their names and relationship status with Will?",
   },
 ];
 console.log(categoryArray);
 let cardHtml = ""
-categoryArray.forEach((category) => {
-  console.log('category: ', category.category);
-cardHtml = `<h3 id="category" class="category">${category.category}</h3>
-<p class="hide">${category.description}</p>
-<h3 id="category" class="category">${category.category}</h3>
-<p class="hide">${category.description}</p>
-<h3 id="category" class="category">${category.category}</h3>
-<p class="hide">${category.description}</p>
-<h3 id="category" class="category">${category.category}</h3>
-<p class="hide">${category.description}</p>
-<h3 id="category" class="category">${category.category}</h3>
-<p class="hide">${category.description}</p>
+
+cardHtml = `<h3 id="category" class="category">${categoryArray[0].category}</h3>
+<p class="hide">${categoryArray[0].description}</p>
+<h3 id="category" class="category">${categoryArray[1].category}</h3>
+<p class="hide">${categoryArray[1].description}</p>
+<h3 id="category" class="category">${categoryArray[2].category}</h3>
+<p class="hide">${categoryArray[2].description}</p>
+<h3 id="category" class="category">${categoryArray[3].category}</h3>
+<p class="hide">${categoryArray[3].description}</p>
+<h3 id="category" class="category">${categoryArray[4].category}</h3>
+<p class="hide">${categoryArray[4].description}</p>
 <button id="startBtn" class="btn">START</button>`
-//console.log(cardHtml)
-})
+
 const mainContent = document.querySelector("#content")
 mainContent.innerHTML = cardHtml
 mainContent.style.color = "black"
@@ -52,22 +50,3 @@ startBtn.addEventListener("click", () => {
   location.href = "quiz.html"
 })
 
-// insertCategory()
-// insertDescription
-//functions to return multipl icons, titles, and descriptions
-
-/* function insertCategory(){
-    categoryArray.forEach((category) =>{
-        //console.log('category: ', category);
-        return `${category}`
-    })
-}
-function insertDescription(){
-    descriptionArray.forEach((description) =>{
-         //console.log('description: ', description);
-        return `${description}`
-    })
-}  */
-/* const categoryArray = [`<p id="category">CATEGORY1</p>`,`<p id="category">CATEGORY2</p>`,`<p id="category">CATEGORY3</p>`,`<p id="category">CATEGORY4</p>`,`<p id="category">CATEGORY5</p>`] */
-
-/* const descriptionArray = [`<p id="description">Lorem1 ipsum dolor sit amet.</p>`,`<p id="description">Lorem2 ipsum dolor sit amet.</p>`,`<p id="description">Lorem3 ipsum dolor sit amet.</p>`,`<p id="description">Lorem4 ipsum dolor sit amet.</p>`,`<p id="description">Lorem5 ipsum dolor sit amet.</p>`] */
