@@ -2,30 +2,30 @@ console.log("we live");
 //* Category Card Object *//
 const categoryArray = [
   {
-    category: `<p id="category">GUEST STARS</p>`,
-    description: `<p id="description">Lorem1 ipsum dolor sit amet.</p>`,
+    category: "GUEST STARS",
+    description: "Lorem1 ipsum dolor sit amet.",
   },
   {
-    category: `<p id="category">PLOTLINES</p>`,
-    description: `<p id="description">Lorem1 ipsum dolor sit amet.</p>`,
+    category: "MAIN PLOTLINES",
+    description: "Lorem1 ipsum dolor sit amet.",
   },
   {
-    category: `<p id="category">BEHIND THE CAMERA</p>`,
-    description: `<p id="description">Lorem1 ipsum dolor sit amet.</p>`,
+    category: "BEHIND THE CAMERA",
+    description: "Lorem1 ipsum dolor sit amet.",
   },
   {
-    category: `<p id="category">CHARACTER NAMES</p>`,
-    description: `<p id="description">Lorem1 ipsum dolor sit amet.</p>`,
+    category: "CHARACTER NAMES",
+    description: "Lorem1 ipsum dolor sit amet.",
   },
   {
-    category: `<p id="category">WILL's RELATIONSHIPS</p>`,
-    description: `<p id="description">Lorem1 ipsum dolor sit amet.</p>`,
+    category: "WILL'S RELATIONSHIPS",
+    description: "Lorem1 ipsum dolor sit amet.",
   },
 ];
-//console.log(categoryArray);
+console.log(categoryArray);
 let cardHtml = ""
 categoryArray.forEach((category) => {
-    //console.log('category: ', category);
+  console.log('category: ', category.category);
 cardHtml = `<h3 id="category" class="category">${category.category}</h3>
 <p class="hide">${category.description}</p>
 <h3 id="category" class="category">${category.category}</h3>
@@ -36,27 +36,27 @@ cardHtml = `<h3 id="category" class="category">${category.category}</h3>
 <p class="hide">${category.description}</p>
 <h3 id="category" class="category">${category.category}</h3>
 <p class="hide">${category.description}</p>
-<!-- Start the Game Button -->
 <button id="startBtn" class="btn">START</button>`
 //console.log(cardHtml)
 })
-const cardContent = document.querySelector("#content")
-cardContent.innerHTML = cardHtml
-cardContent.style.color = "black"
-console.log(cardContent)
+const mainContent = document.querySelector("#content")
+mainContent.innerHTML = cardHtml
+mainContent.style.color = "black"
+console.log(mainContent)
 const startBtn = document.querySelector("#startBtn")
 console.log("startBtn: ", startBtn)
 //click event for start button
 startBtn.addEventListener("click", () => {
   console.log("this button has been clicked")
   //display quiz.html goes here
+  location.href = "quiz.html"
 })
 
 // insertCategory()
 // insertDescription
 //functions to return multipl icons, titles, and descriptions
 
-function insertCategory(){
+/* function insertCategory(){
     categoryArray.forEach((category) =>{
         //console.log('category: ', category);
         return `${category}`
@@ -67,7 +67,7 @@ function insertDescription(){
          //console.log('description: ', description);
         return `${description}`
     })
-} */
+}  */
 /* const categoryArray = [`<p id="category">CATEGORY1</p>`,`<p id="category">CATEGORY2</p>`,`<p id="category">CATEGORY3</p>`,`<p id="category">CATEGORY4</p>`,`<p id="category">CATEGORY5</p>`] */
 
 /* const descriptionArray = [`<p id="description">Lorem1 ipsum dolor sit amet.</p>`,`<p id="description">Lorem2 ipsum dolor sit amet.</p>`,`<p id="description">Lorem3 ipsum dolor sit amet.</p>`,`<p id="description">Lorem4 ipsum dolor sit amet.</p>`,`<p id="description">Lorem5 ipsum dolor sit amet.</p>`] */
