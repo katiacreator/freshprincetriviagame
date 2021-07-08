@@ -7,21 +7,43 @@
   --bitter-lime: #c2f43dff;
 }
 
-/* change bg color to white when finished */
-body {
-  background-color: white;
-  color: black;
-  font-size: 24px;
+body{
+  background-color: var(--bitter-lime);
+  color: var(--black);
+  font-size: 44px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* default styling */
+#content {
+  display: flex;  /* defaults to row layout */
+  justify-content: center;  /* centers items horizontally in row layout */
+  align-items: center;  /* centers vertically in row layout */
+  flex-direction: column; 
+}
+
+/* this is the container */
+#content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 500px;
+  padding: 180px;
+  border: solid purple 15px;
+  border-radius: 25px;
+  background-color: white;
+}
 .img {
-  height: 200px;
-  width: 200px;
+  height: 500px;
+  width: 500px;
   background: rgba(91, 10, 124, 0.717);
   margin: 100px;
   padding: 50px;
   border: solid red 3px;
 }
+/* 
 
 #logo-card{
   border: solid red 3px;
@@ -33,15 +55,12 @@ max-width: 500px;
 color: black;
 text-align: center;
 margin: auto;
-}
-
-.instructions{
-font-size: 18px;
-color: black
-}
+} */
 
 
-.btn {
+
+
+/* .btn {
   background-color: var(--bitter-lime);
   color: white;
   outline: 0;
@@ -53,7 +72,6 @@ color: black
   text-align: center;
   cursor: pointer;
   opacity: 1;
-  width: 100%;
 }
 
 a {
@@ -62,9 +80,11 @@ a {
   color: black;
 }
 
-.btn:hover , a:hover {
-    background-color:var(--bitter-lime);
-    color: black;
-    opacity: 0.7;
-    transition: 2s;
-}
+.btn:hover , a:hover{
+  background-color: var(--aqua);
+  animation: pulse;
+  animation-duration: .9s; 
+} */
+
+
+

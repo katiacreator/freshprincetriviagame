@@ -55,6 +55,12 @@ body{
     animation-duration: 1s;
 }
 
+#timer{
+  background-color: var(--cotton-candy);
+  padding: 10px;
+  margin-top: -5px;
+}
+
 #question-section{
 border: aqua solid 8px;
 border-radius: 15px;
@@ -75,7 +81,7 @@ border-radius: 15px;
 }
 
 .btn{
-  border: solid var(--aqua) 8px;
+  border: solid var(--aqua) 2px;
   border-radius: 15px;
   width: 800px;
   height: 100px;

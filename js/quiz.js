@@ -83,7 +83,7 @@ function startQuiz() {
 function showQuestion(questionNum) {
   markup = `<section id="countdown">
   <section id="time-left">
- <span><h3 id="timer"></h3></span>
+ <span><h3 id="timer" class="animated--animated animate--bounce"></h3></span>
   </section>
   </section>
   <section id="question-section">
@@ -181,12 +181,11 @@ function evaluateAnswerGiven(e) {//this function is called but isn't giving e
 //this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz-when do i call this
 function setNextQuestion() {//this function is running correctly
   console.log("setnextQuestion function is bein run")
-  if (questionNum < 5) {
+  if (questionNum < questionArray.length - 1) {
     questionNum++;
   showQuestion(questionNum);
   } else {
     timerEl.textContent = `GAME OVER!!!!!!`;
-    alert(`There are no more questions`);
     // gameOver();
   }
 }
