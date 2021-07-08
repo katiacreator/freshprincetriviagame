@@ -163,7 +163,7 @@ function evaluateAnswerGiven(e) {
   //this function is called but isn't giving e
   console.log("evalAnswer function is activated");
   if (e.target.textContent === questionArray[questionNum].answer) {
-    score+=10; //score stays the same, no points awarded
+    score++; //score stays the same, no points awarded
     console.log("score: ", score);
     setNextQuestion(); //moves on to next question
   } else if (e.target !== questionArray[questionNum].answer) {
