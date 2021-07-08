@@ -73,7 +73,7 @@ const startBtn = document.querySelector("#startBtn");
 //This starts the entire quiz process with clicking the start button
 startBtn.addEventListener("click", startQuiz);
 function startQuiz() {
-  console.log("has been clicked");
+  //console.log("has been clicked");
   showQuestion(questionNum); //function will append first question
 }
 
@@ -87,7 +87,7 @@ function showQuestion(questionNum) {
   </section>
   </section>
   <section id="question-section">
-  <section id="category">${questionArray[questionNum].category}</section>
+  <section id="category" >${questionArray[questionNum].category}</section>
   <section id="question">${questionArray[questionNum].question}</section>
   </section>
   <button class="choiceA btn">${questionArray[questionNum].choicesArray[0]}</button>
@@ -97,7 +97,7 @@ function showQuestion(questionNum) {
   timerEl = document.querySelector("#timer");
   questionTimer();
   choiceABtn = document.querySelector(".choiceA");
-  choiceABtn.addEventListener('click', (e)=> {
+  choiceABtn.addEventListener('click', ()=> {
     if (timerIntervalId || timeOutId) {
       clearInterval(timerIntervalId)
       clearTimeout(timeOutId)
@@ -116,7 +116,7 @@ function showQuestion(questionNum) {
   })
 
   choiceBBtn = document.querySelector(".choiceB");
-  choiceBBtn.addEventListener('click', (e)=> {
+  choiceBBtn.addEventListener('click', ()=> {
     if (timerIntervalId || timeOutId) {
       clearInterval(timerIntervalId)
       clearTimeout(timeOutId)
@@ -125,7 +125,7 @@ function showQuestion(questionNum) {
   })
 
   choiceCBtn = document.querySelector(".choiceC");
-  choiceCBtn.addEventListener('click', (e)=> {
+  choiceCBtn.addEventListener('click', ()=> {
     if (timerIntervalId || timeOutId) {
       clearInterval(timerIntervalId)
       clearTimeout(timeOutId)
@@ -162,6 +162,7 @@ function questionTimer() {
   }, 15500);
 }
 
+// choiceBBtn.addEventListener('click', evaluateAnswerGiven(e))
 //if  a choice has been made or time is up then set next question
 function evaluateAnswerGiven(e) {//this function is called but isn't giving e
   console.log("evalAnswer function is activated")
@@ -184,7 +185,7 @@ function setNextQuestion() {//this function is running correctly
     questionNum++;
   showQuestion(questionNum);
   } else {
-    timerEl.textContent = `Time Left:${0}`;
+    timerEl.textContent = `GAME OVER!!!!!!`;
     alert(`There are no more questions`);
     // gameOver();
   }

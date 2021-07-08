@@ -51,6 +51,8 @@ body{
     padding-right: 40px;
     margin-left: 90px;
     margin-bottom: 15px;
+    animation: bounce;
+    animation-duration: 1s;
 }
 
 #question-section{
@@ -87,5 +89,7 @@ border-radius: 15px;
 
 .btn:hover{
   background-color: var(--aqua);
+  animation: pulse;
+  animation-duration: .9s; 
 }
 
