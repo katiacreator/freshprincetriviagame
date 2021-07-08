@@ -7,53 +7,74 @@
   --bitter-lime: #c2f43dff;
 }
 
-body {
-  background-color: var(--black);
-  color: var(--aqua);
+body{
+  background-color: var(--bitter-lime);
+  color: var(--black);
   font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* default styling */
+#content {
+  display: flex;  /* defaults to row layout */
+  justify-content: center;  /* centers items horizontally in row layout */
+  align-items: center;  /* centers vertically in row layout */
+  flex-direction: column; 
+}
+
+/* this is the container */
+#content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 500px;
+  padding: 180px;
+  border: solid purple 5px;
+  /* border-radius: 25px; */
+  background-color: var(--white);
 }
 
 .img {
   max-width:100%;
-  height:auto; 
+  height:auto;
+  background: rgba(91, 10, 124, 0.717);
+  margin: 20px;
+  padding: 40px;
+  border: solid red 3px;
 }
 
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
+#category {
+background-color: var(--bitter-lime);
+color: black;
+text-align: center;
+margin: 10px auto;
+padding: 35px 100px;
+border: solid red 3px;
 }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+
+.btn {
+  background-color: var(--aqua);
+  color: black;
+  border: solid var(--aqua) 8px;
+  border-radius: 15px;
+  display: flex;
+  padding: 12px 16px;
+  font-size: 28px;
   text-align: center;
-  transition: transform 0.4s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  cursor: pointer;
+  
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+.btn:hover{
+  background-color: var(--aqua);
+  animation: pulse;
+  animation-duration: .5s; 
+} 
 
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-/* will change color depending on category */
-.flip-card-front {
-  background-color: var(--cotton-candy);
-}
-/* will change color depending on category */
-.flip-card-back {
-  background-color:var(--cotton-candy);
-  color: white;
-  transform: rotateY(180deg);
+.hide{
+  display: none;
 }
