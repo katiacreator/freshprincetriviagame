@@ -9,39 +9,39 @@ const questionArray = [
     choicesArray: ["Carlton", "Chuck", "Charleston"],
     answer: "Carlton",
     category: "CHARACTER NAMES",
-    score: 0,
+    
   },
   {
     id: 2,
     question: "2What is Will's cousin's name that he is always berating?",
     choicesArray: ["two", "Chuck", "Charleston"],
-    answer: "Carlton",
+    answer: "Chuck",
     category: "GUEST STARS",
-    score: 0,
+   
   },
   {
     id: 3,
     question: "3What is Will's cousin's name that he is always berating?",
     choicesArray: ["three", "Chuck", "Charleston"],
-    answer: "Carlton",
+    answer: "Charleston",
     category: "PLOTLINES",
-    score: 0,
+    
   },
   {
     id: 4,
     question: "4What is Will's cousin's name that he is always berating?",
     choicesArray: ["four", "Chuck", "Charleston"],
-    answer: "Carlton",
+    answer: "four",
     category: "BEHIND THE CAMERA",
-    score: 0,
+    
   },
   {
     id: 5,
     question: "5What is Will's cousin's name that he is always berating?",
     choicesArray: ["five", "Chuck", "Charleston"],
-    answer: "Carlton",
+    answer: "five",
     category: "WILL'S RELATIONSHIPS",
-    score: 0,
+    
   },
 ];
 
@@ -90,41 +90,53 @@ function showQuestion(questionNum) {
   <section id="category">${questionArray[questionNum].category}</section>
   <section id="question">${questionArray[questionNum].question}</section>
   </section>
-  <button class="choiceA btn">A: ${questionArray[questionNum].choicesArray[0]}</button>
-  <button class="choiceB btn">B: ${questionArray[questionNum].choicesArray[1]}</button>
-  <button class="choiceC btn">C: ${questionArray[questionNum].choicesArray[2]}</button>`;
+  <button class="choiceA btn">${questionArray[questionNum].choicesArray[0]}</button>
+  <button class="choiceB btn">${questionArray[questionNum].choicesArray[1]}</button>
+  <button class="choiceC btn">${questionArray[questionNum].choicesArray[2]}</button>`;
   mainContent.innerHTML = markup;
   timerEl = document.querySelector("#timer");
   questionTimer();
   choiceABtn = document.querySelector(".choiceA");
   choiceABtn.addEventListener('click', (e)=> {
-    console.log(e.target.textContent)
-    resetTimer()
+    if (timerIntervalId || timeOutId) {
+      clearInterval(timerIntervalId)
+      clearTimeout(timeOutId)
+      setNextQuestion()
+    }
+
+    /* if(e.target.textContent === questionArray[questionNum].answer) {
+      score++; //score stays the same, no points awarded
+      console.log('score: ', score);
+      setNextQuestion(); //moves on to next question
+    } else if (e.target !== questionArray[questionNum].answer){
+      score;
+      console.log('score: ', score);
+      setNextQuestion()
+    } */
   })
+
   choiceBBtn = document.querySelector(".choiceB");
   choiceBBtn.addEventListener('click', (e)=> {
-    console.log(e.target.textContent)
-    resetTimer()
+    if (timerIntervalId || timeOutId) {
+      clearInterval(timerIntervalId)
+      clearTimeout(timeOutId)
+      setNextQuestion()
+    }
   })
+
   choiceCBtn = document.querySelector(".choiceC");
   choiceCBtn.addEventListener('click', (e)=> {
-    console.log(e.target.textContent)
-    resetTimer()
+    if (timerIntervalId || timeOutId) {
+      clearInterval(timerIntervalId)
+      clearTimeout(timeOutId)
+      setNextQuestion()
+    }
   })
-}
-
-//put the clear intervals/timeouts in this function to make the code more DRY
-function resetTimer(){
-  if (timerIntervalId || timeOutId) {
-    clearInterval(timerIntervalId)
-    clearTimeout(timeOutId)
-    setNextQuestion()
-  }
 }
 
 //Timer Function-run this every 15 seconds or after each choice is clicked
 function questionTimer() {
-  console.log("questionTimer function is bein run")
+  //console.log("questionTimer function is bein run")
   //setInterval for a tick
   timeLeft = 15;
   // if (timerIntervalId) {
@@ -142,7 +154,7 @@ function questionTimer() {
     clearInterval(timerIntervalId);
     //add play ticking sound
     if (timeLeft === 0) {
-      timerEl.textContent = ` :${0}`;
+      timerEl.textContent = `Time Left:${0}`;
       score;
       console.log('score: ', score);
       setNextQuestion()
@@ -151,13 +163,13 @@ function questionTimer() {
 }
 
 //if  a choice has been made or time is up then set next question
-function evaluateAnswerGiven() {//this function is called but isn't giving e
+function evaluateAnswerGiven(e) {//this function is called but isn't giving e
   console.log("evalAnswer function is activated")
-  
- if(e.target.textContent !== null && e.target.textContent === questionArray[questionNum].answer) {
+  if(e.target.textContent === questionArray[questionNum].answer) {
     score++; //score stays the same, no points awarded
+    console.log('score: ', score);
     setNextQuestion(); //moves on to next question
-  } else if (evt.target !== null && evt.target !== questionArray[questionNum].answer){
+  } else if (e.target !== questionArray[questionNum].answer){
     score;
     console.log('score: ', score);
     setNextQuestion()
@@ -172,6 +184,7 @@ function setNextQuestion() {//this function is running correctly
     questionNum++;
   showQuestion(questionNum);
   } else {
+    timerEl.textContent = `Time Left:${0}`;
     alert(`There are no more questions`);
     // gameOver();
   }
