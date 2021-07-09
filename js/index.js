@@ -5,7 +5,9 @@ const homeScreen = {
   instructions: `<h3 class="description">A timed-quiz game about the popular 90s tv show, "Fresh Prince of Bel-Air". Click next for instructions.</h3>`,
 };
 
-let markup = `
+let markup = `${homeScreen.title}
+${homeScreen.instructions}
+<button class="btn" id="nextBtn">NEXT</button>
 <div class='filmstrip-wrapper'>
 <div class='filmstrip'> <!-- There must be NO whitespace between frames!-->
   <div class='filmstrip-frame'>
@@ -29,9 +31,7 @@ let markup = `
   </div>
   </div>
   </div>
-  ${homeScreen.title}
-${homeScreen.instructions}
-<button class="btn" id="nextBtn">NEXT</button>`;
+  `;
 
 const mainContent = document.getElementById("content");
 mainContent.innerHTML = markup;
