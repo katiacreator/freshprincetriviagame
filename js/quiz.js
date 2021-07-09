@@ -266,6 +266,7 @@ function setNextQuestion() {
     showScore();
   }
 }
+
 /* //refactor code using this function
 function gameOver(){
   const endGameDisplay = document.querySelector("#endGameDisplay");
@@ -297,16 +298,5 @@ function showScore() {
   }
 }
 
-/* function resetGame() {
-  markup = `
-<button id="startBtn" class="btn">START</button>
-</section>`;
-  mainContent.innerHTML = markup;
-  timerEl;
-  timerIntervalId;
-  timeOutId;
-  timeLeft = 15;
-  questionNum = 0;
-  score = 0;
-} */
+
 
