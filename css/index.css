@@ -19,20 +19,20 @@ body{
   font-size: 38px;
   text-align: center;
   color: black;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .title{
   font-family: 'Rock Salt', cursive;
   font-weight: bold;
   color: var(--bitter-lime);
-  font-size: 62px;
+  font-size: 42px;
   letter-spacing: 10px;
   text-align: center;
 }
 
 .description{
-  width: 600px;
+  width: 400px;
   height: 50px;
   font-size: 20px;
   display: block;
@@ -41,6 +41,17 @@ body{
   padding: 4px 10px;
   /* margin: -15px 10px; */
 }
+
+.instructions{
+  width: 400px;
+  height: 20px;
+  font-size: 18px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+}
+
 /* default styling */
 #content {
   display: flex;  /* defaults to row layout */
@@ -49,39 +60,16 @@ body{
   flex-direction: column; 
   margin-top: 110px;
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 260px;
-  width: 800px;
-  padding: 160px;
-  border: solid purple 15px;
-  border-radius: 25px;
-  background-color:var(--cotton-candy);
-}
-
-/* this is the container */
-/* #content{
-  position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 200px;
-  width: 200px;
+  width: 400px;
   padding: 150px;
   border: solid purple 15px;
   border-radius: 25px;
   background-color:var(--cotton-candy);
-} */
-
-/* .img {
-  max-width: 100%;
-  height: auto;
-  background: rgba(91, 10, 124, 0.717);
-  margin: 20px;
-  padding: 40px;
-  border: solid red 3px;
-} */
+}
 
 
 .btn {
@@ -95,58 +83,7 @@ body{
   text-align: center;
   text-decoration: none;
   cursor: pointer; 
-  margin-bottom: -80px;
-}
-
-
-.filmstrip-wrapper{
-  /* border-top: 1 px solid gray;
-  border-bottom: 1 px solid gray; */
-  animation: filmstrip-animation 2s linear infinite;
-  transform: perspective(90);
-}
-
-.filmstrip{
-  /* background-color: black; */
-  white-space: nowrap;
-  width: 100vw;
-  height: 30vh;
-}
-
-.filmstrip::before,
-.filmstrip::after {
-  /* background-image: url(img/filmstrip_border.gif); */
-  content: ' ';
-  display: block;
-  height: 30px;
-  margin-top: 80px;
-  margin-bottom: 20px;
-}
-
-.filmstrip-frame{
-  /* background-color: gray; */
-  border-radius: 3px;
-  display: inline-block;
-  width: 276px;
-  height: 250px;
-  margin: 0 12px;
-}
-
-.filmstrip-frame img{
-  display: block;
-  margin: auto;
-  max-width: 80%;
-  max-height: 80%;
-}
-
-@keyframes filmstrip-animation{
-  from{
-    transform: translateX(0);
-  }
-  to{
-    transform: translateX(-300px);
-  }
-}
+} 
 
 
 
