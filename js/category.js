@@ -2,51 +2,41 @@ console.log("we live");
 //* Category Card Object *//
 const categoryArray = [
   {
-    category: "GUEST STARS",
-    description: "A certain actress became Will's real life love interest. Can you guess who?",
+    category: "GUEST STARS: questions abour celebrity cameos and crossover tv characters"
   },
   {
-    category: "MAIN PLOTLINES",
-    description: "Most of the show was filled with hilarious moments, some poignant, some tragic then funny again(again, poor Trevor!)",
+    category: "MAIN PLOTLINES:questions about the most iconic moments in the show"
   },
   {
-    category: "BEHIND THE CAMERA",
-    description: "For the real stans with way too much time on their hands, can you guess some of these very specific show production facts like what network the show was on, that b-boy grip from Episode 67?...ok maybe not that specific!",
+    category: "BEHIND THE CAMERA:questions about production and history of the show"
   },
   {
-    category: "CHARACTER NAMES",
-    description: "Super easy! Can you name that iconic character from the show?!",
+    category:
+      "CHARACTER NAMES: questions about main and not-so main recurring characters",
   },
   {
-    category: "WILL'S RELATIONSHIPS",
-    description: "Let's face it, Will was a ladies man! Can you correctly match their names and relationship status with Will?",
+    category:
+      "WILL'S RELATIONSHIPS: questions abour Will's love interests throughout the show"
   },
 ];
-console.log(categoryArray);
-let cardHtml = ""
+let cardHtml = "";
 
-cardHtml = `<h3 id="category" class="category">${categoryArray[0].category}</h3>
-<p class="hide">${categoryArray[0].description}</p>
-<h3 id="category" class="category">${categoryArray[1].category}</h3>
-<p class="hide">${categoryArray[1].description}</p>
-<h3 id="category" class="category">${categoryArray[2].category}</h3>
-<p class="hide">${categoryArray[2].description}</p>
-<h3 id="category" class="category">${categoryArray[3].category}</h3>
-<p class="hide">${categoryArray[3].description}</p>
-<h3 id="category" class="category">${categoryArray[4].category}</h3>
-<p class="hide">${categoryArray[4].description}</p>
-<button id="startBtn" class="btn">START</button>`
+cardHtml = `<h3 class="instructions">CATEGORIES</h3>
+<p class="instructions">MAIN PLOTLINES: questions about the most iconic moments in the show</p>
+<p class="instructions">BEHIND THE CAMERA: questions about production and history of the show</p>
+<p class="instructions">CHARACTER NAMES: questions about main and not-so main recurring characters</p>
+<p class="instructions">WILL'S RELATIONSHIPS: questions abour Will's love interests throughout the show</p>
+<p class="instructions">GUEST STARS: questions abour celebrity cameos and crossover tv characters</p>
+<p class="instructions">Click continue to head over to the game</p>
+<button id="continueBtn" class="btn">CONTINUE</button>`;
 
-const mainContent = document.querySelector("#content")
-mainContent.innerHTML = cardHtml
-mainContent.style.color = "black"
-console.log(mainContent)
-const startBtn = document.querySelector("#startBtn")
-console.log("startBtn: ", startBtn)
+const mainContent = document.querySelector("#content");
+mainContent.innerHTML = cardHtml;
+
+const continueBtn = document.querySelector("#continueBtn");
 //click event for start button
-startBtn.addEventListener("click", () => {
-  console.log("this button has been clicked")
+continueBtn.addEventListener("click", () => {
+  console.log("this button has been clicked");
   //display quiz.html goes here
-  location.href = "quiz.html"
-})
-
+  location.href = "quiz.html";
+});

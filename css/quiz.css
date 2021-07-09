@@ -1,10 +1,10 @@
-
-:root{
-  --cotton-candy: #FAB6E5ff;
+:root {
+  --cotton-candy: rgb(255, 107, 201);
   --black: #000000ff;
-  --white: #FFFFFFff;
-  --aqua: #04FAFEff;
-  --bitter-lime: #C2F43Dff;
+  --white: #ffffffff;
+  --aqua: #04fafeff;
+  --bitter-lime: #c2f43dff;
+  --deep-purple: rgb(77, 4, 77);
 }
 
 
@@ -19,7 +19,6 @@ body{
   max-width:100%;
   height:auto; 
 }
-
 .hide{
   display: none;
 }

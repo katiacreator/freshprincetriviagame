@@ -99,11 +99,6 @@ function showQuestion(questionNum) {
       clearInterval(timerIntervalId);
       clearTimeout(timeOutId);
       evaluateAnswerGiven(e);
-      //setNextQuestion()
-      //what i need to happen here:
-      //disable the other buttons so another answer can't be clicked-do i  need this if it is going straight to next function
-      //compare choice to actual answer to log score
-      //then set Next Question
     }
   });
 
@@ -113,7 +108,6 @@ function showQuestion(questionNum) {
       clearInterval(timerIntervalId);
       clearTimeout(timeOutId);
       evaluateAnswerGiven(e);
-      //setNextQuestion()
     }
   });
 
@@ -123,14 +117,12 @@ function showQuestion(questionNum) {
       clearInterval(timerIntervalId);
       clearTimeout(timeOutId);
       evaluateAnswerGiven(e);
-      //setNextQuestion()
     }
   });
 }
 
 //Timer Function-run this every 15 seconds or after each choice is clicked
 function questionTimer() {
-  //console.log("questionTimer function is bein run")
   //setInterval for a tick
   timeLeft = 15;
   // if (timerIntervalId) {
@@ -139,7 +131,6 @@ function questionTimer() {
   timerIntervalId = setInterval(function () {
     timerEl.textContent = `Time Left:${timeLeft}`;
     timeLeft -= 1;
-    //console.log("timeLeft: (is a number not a string/text) ", timeLeft);
   }, 1000);
   //setInterval
 
@@ -156,11 +147,9 @@ function questionTimer() {
   }, 15500);
 }
 
-// choiceBBtn.addEventListener('click', evaluateAnswerGiven(e))
 
 //if  a choice has been made or time is up then set next question
 function evaluateAnswerGiven(e) {
-  //this function is called but isn't giving e
   console.log("evalAnswer function is activated");
   if (e.target.textContent === questionArray[questionNum].answer) {
     score++; //score stays the same, no points awarded
@@ -173,31 +162,25 @@ function evaluateAnswerGiven(e) {
   }
 }
 
-//this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz-when do i call this
+//this part is saying if there are questions in the array that haven't been shown yet then either keep showing next question or show option to restart quiz
 function setNextQuestion() {
-  //this function is running correctly
   console.log("setnextQuestion function is bein run");
   if (questionNum < questionArray.length - 1) {
     questionNum++;
     showQuestion(questionNum);
   } else {
-    //clearInterval(timerIntervalID)
-    //clear main content
     timerEl.textContent = `GAME OVER!!!!!!`;
-    showScore();
-    //show Score section, add restart button
-    // gameOver();
-    
+    showScore();    
   }
 }
-
+/* //refactor code using this function
 function gameOver(){
   const endGameDisplay = document.querySelector("#endGameDisplay");
   console.log('endGameDisplay: ', endGameDisplay);
   const gameOverText = document.querySelector("#gameOverText");
   console.log('gameOverText: ', gameOverText);
   markup = `<h1>Game Over</h1><p> Congrats! Press scores button to see how you did!<button id="scoresBtn" class="btn">Scores</button>`;
-}
+} */
 
 
 function showScore() {
@@ -205,25 +188,23 @@ function showScore() {
   console.log("scoreDisplay: ", scoreDisplay);
   const scoreText = document.querySelector("#scoreText");
   console.log("scoreText: ", scoreText);
-  if (score === 0 || score < 4){
-    markup = `You scored ${score} points! Wow! You must hate Will Smith! Press home button to play again<a href="index.html" id="homeBtn" class"btn">Home</a>`;
+  if (score === 0 || score < 7){
+    markup = `You scored ${score} points! You fail! Ok, so maybe add FPOBA to your tv binge list. I know you have one!  Press home button to restart the game.<button id="homeBtn" class"btn">Home</button>`;
     mainContent.innerHTML = markup;
-  } else if (score < 5 && score < 8 ){
-    markup = `You scored ${score} points! Ok, so maybe add FPOBA to your tv binge list. I know you have one!  Press home button to play again<a href="index.html" id="homeBtn" class"btn">Home</a>`;
+    const homeBtn = document.querySelector("#homeBtn")
+    homeBtn.addEventListener('click', ()=>{
+      location.href = "../index.html"
+    })
+  } else {
+    markup = `You scored ${score} points! You win! I now crown you as Fresh Prince of Bel-Air fan royalty! Press home button to play again<button id="homeBtn" class"btn">Home</button>`;
     mainContent.innerHTML = markup;
-  } else if (score < 9  && score < 10 ){
-    markup = `You scored ${score} points! Yes, you are a true fan of the show! I can tell! Press home button to play again<a href="index.html" id="homeBtn" class"btn">Home</a>`;
-    mainContent.innerHTML = markup;
-  } else if (score === 10){
-    markup = `You scored ${score} points! Congrats! I now crown you as Fresh Prince of Bel-Air fan royalty! Press home button to play again<a href="index.html" id="homeBtn" class"btn">Home</a>`;
-    mainContent.innerHTML = markup;
+    const homeBtn = document.querySelector("#homeBtn")
+    homeBtn.addEventListener('click', ()=>{
+      location.href = "../index.html"
+    })
   }
-  
-  
-  const homeBtn = document.querySelector("#homeBtn");
-  console.log("homeBtn: ", homeBtn);
-  homeBtn.addEventListener("click", resetGame);
 }
+
 
 /* function resetGame() {
   markup = `

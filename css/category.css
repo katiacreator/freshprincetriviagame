@@ -1,10 +1,10 @@
-
 :root {
-  --cotton-candy: #fab6e5ff;
+  --cotton-candy: rgb(255, 107, 201);
   --black: #000000ff;
   --white: #ffffffff;
   --aqua: #04fafeff;
   --bitter-lime: #c2f43dff;
+  --deep-purple: rgb(77, 4, 77);
 }
 
 body{
@@ -31,28 +31,30 @@ body{
   height: 500px;
   width: 500px;
   padding: 180px;
-  border: solid purple 5px;
+   border: solid rgb(77, 4, 77) 5px; 
   /* border-radius: 25px; */
-  background-color: var(--white);
+  background-color: var(--bitter-lime);
 }
 
-.img {
-  max-width:100%;
-  height:auto;
-  background: rgba(91, 10, 124, 0.717);
-  margin: 20px;
-  padding: 40px;
+.instructions{
+  font-size: 32px;
+  text-align: center;
+  color: var(--black);
+  margin: 10px;
+  padding: 10px;
+  width: 800px;
   border: solid red 3px;
 }
 
-#category {
-background-color: var(--bitter-lime);
+/* #category {
+background-color: var(--cotton-candy);
 color: black;
 text-align: center;
-margin: 10px auto;
-padding: 35px 100px;
-border: solid red 3px;
-}
+margin: 20px;
+padding: 35px;
+width: 200px;
+border: solid white 0.5px;
+} */
 
 
 .btn {
