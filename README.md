@@ -32,7 +32,10 @@
 #### [Color Palette for Game Logo]<img src = "assets/freshprince/freshprince-color palette.png" alt = "color palette for game logo" width="500">
 #
 ## Final Product
-#### [Final Home Screen]<img src = "assets/pseudocode images/home screen.png" alt = "final home screen" width = "500"/>
+#### <img src = "assets/pseudocode images/home screen.png" alt = "final home screen" width = "300"/>
+#### <img src = "assets/instructions screen.png" alt = "final instructions screen" width = "300"/>
+#### <img src = "assets/categories screen.png" alt = "final category screen" width = "300"/>
+#### <img src = "assets/quiz screen.png" alt = "final score screen" width = "300"/>
 #
 ## Languages and Tools Used
 ### HTML5, CSS3, Javascript, Animate.css, and lots of late-night googling!

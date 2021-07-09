@@ -32,13 +32,15 @@ ${homeScreen.instructions}
   </div>
   </div>
   `;
-
+console.log(markup)
 const mainContent = document.getElementById("content");
 mainContent.innerHTML = markup;
 const nextBtn = document.querySelector("#nextBtn");
+console.log('nextBtn: ', nextBtn);
 nextBtn.addEventListener("click", () => {
+  console.log("clicked")
     location.href = "html/instructions.html";
-  });
+});
 
 
 // - Credit to Dominick @ Codepen: https://codepen.io/dmj/pen/vVpdEe for this filmstrip animation code
