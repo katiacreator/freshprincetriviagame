@@ -32,6 +32,9 @@ body{
   border: solid red 3px;
 }
 
+.description{
+  
+}
 .instructions{
   width: 400px;
   height: 20px;
@@ -48,7 +51,16 @@ body{
   align-items: center;  /* centers vertically in row layout */
   flex-direction: column; 
   margin-top: 110px;
-  /* border: solid red 5px; */
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 200px;
+  padding: 150px;
+  border: solid purple 15px;
+  border-radius: 25px;
+  background-color:var(--cotton-candy);
 }
 
 /* this is the container */

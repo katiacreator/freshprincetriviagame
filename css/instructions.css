@@ -1,0 +1,81 @@
+:root {
+    --cotton-candy: rgb(255, 107, 201);
+    --black: #000000ff;
+    --white: #ffffffff;
+    --aqua: #04fafeff;
+    --bitter-lime: #c2f43dff;
+    --deep-purple: rgb(77, 4, 77);
+  }
+  
+  body{
+    background-color: var(--bitter-lime);
+    color: var(--black);
+    font-size: 20px;
+    /* font-family: 'Rock Salt', cursive; */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .instructions{
+    width: 400px;
+    height: 20px;
+    font-size: 18px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+  }
+  /* default styling */
+  #content {
+    display: flex;  /* defaults to row layout */
+    justify-content: center;  /* centers items horizontally in row layout */
+    align-items: center;  /* centers vertically in row layout */
+    flex-direction: column; 
+    margin-top: 110px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    padding: 150px;
+    border: solid purple 15px;
+    border-radius: 25px;
+    background-color:var(--cotton-candy);
+  }
+  
+  /* this is the container */
+  /* #content{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    padding: 150px;
+    border: solid purple 15px;
+    border-radius: 25px;
+    background-color:var(--cotton-candy);
+  } */
+  
+  .img {
+    max-width:100%;
+    height: auto;
+    background: rgba(91, 10, 124, 0.717);
+    margin: 20px;
+    padding: 40px;
+    border: solid red 3px;
+  }
+  
+  
+  .btn {
+    background-color: var(--aqua);
+    color: black;
+    border: solid var(--aqua) 8px;
+    border-radius: 15px;
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer; 
+  }
