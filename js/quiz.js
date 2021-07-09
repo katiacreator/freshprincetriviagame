@@ -9,12 +9,12 @@ const questionArray = [
       "In the very first episode, 'The Fresh Prince Project', who does Will confuse Geoffrey with?",
     choicesArray: ["Carlton", "Uncle Phil", "Jazz"],
     answer: "Uncle Phil",
-    category: "PLOTLINES",
+    category: "MAIN PLOTLINES",
   },
   {
     id: 2,
     question:
-      "Vanessa L. Williams portrayed a pregnant sportswriter who took Will to a Lakers game and went into labor in the limousine. What was her character's name?",
+      "Vanessa L. Williams portrayed this pregnant sportswriter who went into labor in the limousine?",
     choicesArray: ["Vanessa Wilson", "Danny Mitchell", "Jena Jackson"],
     answer: "Danny Mitchell",
     category: "GUEST STARS",
@@ -33,7 +33,7 @@ const questionArray = [
   {
     id: 3,
     question:
-      "In the episode 'The Mother of All Battles,' Ashley has a bully at school. What's the bully's name?",
+      "Ashley had a bully at school. What's the bully's name?",
     choicesArray: ["Jamie", "Paula", "Marie"],
     answer: "Paula",
     category: "CHARACTER NAMES",
@@ -41,7 +41,7 @@ const questionArray = [
   {
     id: 4,
     question:
-      "Trapped in the basement with her during prom, Will discovers everything about her is fake, what was her name?",
+      "Trapped in the basement during an earthquake, Will discovers everything about her is fake?",
     choicesArray: ["Monica", "Vivica", "Kathleen"],
     answer: "Kathleen",
     category: "WILL'S RELATIONSHIPS",
@@ -49,7 +49,7 @@ const questionArray = [
   {
     id: 5,
     question:
-      " What very young actress appeared on the show as the daughter of Will's mother, Vy's boyfriend, Robert?",
+      " What famous child actress portrayed the daughter of Will's mother, Vy's boyfriend?",
     choicesArray: ["Mandy Moore", "Raven Symone", "Drew Barrymore"],
     answer: "Raven Symone",
     category: "GUEST STARS",
@@ -57,14 +57,14 @@ const questionArray = [
   {
     id: 6,
     question: "What is Will's mother's name?",
-    choicesArray: ["Betty", "Helen", "Viola(Vy"],
+    choicesArray: ["Betty", "Helen", "Viola(Vy)"],
     answer: "Viola(Vy)",
     category: "CHARACTER NAMES",
   },
   {
     id: 7,
     question:
-      "This executive producer for the show plays the cab driver in the opening scene?",
+      "This executive producer for the show also plays the cab driver in the opening scene?",
     choicesArray: ["Eric Clapton", "Quincy Jones", "Chris Lighty"],
     answer: "Quincy Jones",
     category: "BEHIND THE CAMERA",
@@ -79,7 +79,7 @@ const questionArray = [
   },
   {
     id: 9,
-    question: "What is the name of Will's BFF that had a major crush on Hilary",
+    question: "What is the name of Will's BFF that had a major crush on Hilary?",
     choicesArray: ["Jazz", "Chuck", "Charleston"],
     answer: "Jazz",
     category: "CHARACTER NAMES",
@@ -87,7 +87,7 @@ const questionArray = [
   {
     id: 10,
     question:
-      "This actress auditioned to play Will's girlfriend but was rejected for being too short",
+      "This actress auditioned to play Will's girlfriend but was rejected for being too short?",
     choicesArray: ["Vivica Fox", "Gabrielle Union", "Jada Pinkett"],
     answer: "Jada Pinkett",
     category: "GUEST STARS",
@@ -95,14 +95,14 @@ const questionArray = [
   {
     id: 11,
     question:
-      "Nicky Banks' full name is Nicholas Andrew Michael Shawn Nathan Wanya Banks. Who is he named after?",
+      "Nicholas Andrew Michael Shawn Nathan Wanya Banks is named after who?",
     choicesArray: ["Boys II Men", "Jazz", "Bel Biv Devoe"],
     answer: "Boys II Men",
     category: "WILL'S RELATIONSHIPS",
   },
   {
     id: 12,
-    question: "These two are credited as the creators of the show",
+    question: "These two are credited as the creators of the show?",
     choicesArray: [
       "Adam Lebowitz and Cheryl Walton",
       "Susan and Andy Borowitz",
@@ -245,7 +245,7 @@ function questionTimer() {
 function evaluateAnswerGiven(e) {
   console.log("evalAnswer function is activated");
   if (e.target.textContent === questionArray[questionNum].answer) {
-    score++; //score stays the same, no points awarded
+    score+=10; //score stays the same, no points awarded
     console.log("score: ", score);
     setNextQuestion(); //moves on to next question
   } else if (e.target !== questionArray[questionNum].answer) {
@@ -280,7 +280,7 @@ function showScore() {
   console.log("scoreDisplay: ", scoreDisplay);
   const scoreText = document.querySelector("#scoreText");
   console.log("scoreText: ", scoreText);
-  if (score === 0 || score < 7) {
+  if (score === 0 || score < 100) {
     markup = `You scored ${score} points! You fail! Ok, so maybe add FPOBA to your tv binge list. I know you have one!  Press home button to restart the game.<button id="homeBtn" class"btn">Home</button>`;
     mainContent.innerHTML = markup;
     const homeBtn = document.querySelector("#homeBtn");
