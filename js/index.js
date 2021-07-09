@@ -54,7 +54,7 @@ nextBtn.addEventListener("click", () => {
     location.href = "html/category.html";
   });
 });
-
+// - Credit to Dominick @ Codepen: https://codepen.io/dmj/pen/vVpdEe for this filmstrip animation code
 let filmstrip = document.getElementsByClassName('filmstrip-wrapper')[0];
           filmstrip.addEventListener('animationiteration', function(){
             // Loop through all the frames and swap their images

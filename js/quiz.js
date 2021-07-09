@@ -5,38 +5,132 @@
 const questionArray = [
   {
     id: 1,
-    question: "1What is Will's cousin's name that he is always berating?",
-    choicesArray: ["Carlton", "Chuck", "Charleston"],
-    answer: "Carlton",
-    category: "CHARACTER NAMES",
-  },
-  {
-    id: 2,
-    question: "2What is Will's cousin's name that he is always berating?",
-    choicesArray: ["two", "Chuck", "Charleston"],
-    answer: "Chuck",
-    category: "GUEST STARS",
-  },
-  {
-    id: 3,
-    question: "3What is Will's cousin's name that he is always berating?",
-    choicesArray: ["three", "Chuck", "Charleston"],
-    answer: "Charleston",
+    question:
+      "In the very first episode, 'The Fresh Prince Project', who does Will confuse Geoffrey with?",
+    choicesArray: ["Carlton", "Uncle Phil", "Jazz"],
+    answer: "Uncle Phil",
     category: "PLOTLINES",
   },
   {
+    id: 2,
+    question:
+      "Vanessa L. Williams portrayed a pregnant sportswriter who took Will to a Lakers game and went into labor in the limousine. What was her character's name?",
+    choicesArray: ["Vanessa Wilson", "Danny Mitchell", "Jena Jackson"],
+    answer: "Danny Mitchell",
+    category: "GUEST STARS",
+  },
+  {
+    id: 2,
+    question: "Trevor Collins-Newsworthy fell to his death doing what?",
+    choicesArray: [
+      "Proposing to Hilary",
+      "Proposing to Vivian",
+      "Proposing to Lisa",
+    ],
+    answer: "Proposing to Hilary",
+    category: "MAIN PLOTLINES",
+  },
+  {
+    id: 3,
+    question:
+      "In the episode 'The Mother of All Battles,' Ashley has a bully at school. What's the bully's name?",
+    choicesArray: ["Jamie", "Paula", "Marie"],
+    answer: "Paula",
+    category: "CHARACTER NAMES",
+  },
+  {
     id: 4,
-    question: "4What is Will's cousin's name that he is always berating?",
-    choicesArray: ["four", "Chuck", "Charleston"],
-    answer: "four",
-    category: "BEHIND THE CAMERA",
+    question:
+      "Trapped in the basement with her during prom, Will discovers everything about her is fake, what was her name?",
+    choicesArray: ["Monica", "Vivica", "Kathleen"],
+    answer: "Kathleen",
+    category: "WILL'S RELATIONSHIPS",
   },
   {
     id: 5,
-    question: "5What is Will's cousin's name that he is always berating?",
-    choicesArray: ["five", "Chuck", "Charleston"],
-    answer: "five",
+    question:
+      " What very young actress appeared on the show as the daughter of Will's mother, Vy's boyfriend, Robert?",
+    choicesArray: ["Mandy Moore", "Raven Symone", "Drew Barrymore"],
+    answer: "Raven Symone",
+    category: "GUEST STARS",
+  },
+  {
+    id: 6,
+    question: "What is Will's mother's name?",
+    choicesArray: ["Betty", "Helen", "Viola(Vy"],
+    answer: "Viola(Vy)",
+    category: "CHARACTER NAMES",
+  },
+  {
+    id: 7,
+    question:
+      "This executive producer for the show plays the cab driver in the opening scene?",
+    choicesArray: ["Eric Clapton", "Quincy Jones", "Chris Lighty"],
+    answer: "Quincy Jones",
+    category: "BEHIND THE CAMERA",
+  },
+  {
+    id: 8,
+    question:
+      "Famous model, Tyra Banks, played Will's in college, what was her name?",
+    choicesArray: ["Janet", "Julissa", "Jackie"],
+    answer: "Jackie",
     category: "WILL'S RELATIONSHIPS",
+  },
+  {
+    id: 9,
+    question: "What is the name of Will's BFF that had a major crush on Hilary",
+    choicesArray: ["Jazz", "Chuck", "Charleston"],
+    answer: "Jazz",
+    category: "CHARACTER NAMES",
+  },
+  {
+    id: 10,
+    question:
+      "This actress auditioned to play Will's girlfriend but was rejected for being too short",
+    choicesArray: ["Vivica Fox", "Gabrielle Union", "Jada Pinkett"],
+    answer: "Jada Pinkett",
+    category: "GUEST STARS",
+  },
+  {
+    id: 11,
+    question:
+      "Nicky Banks' full name is Nicholas Andrew Michael Shawn Nathan Wanya Banks. Who is he named after?",
+    choicesArray: ["Boys II Men", "Jazz", "Bel Biv Devoe"],
+    answer: "Boys II Men",
+    category: "WILL'S RELATIONSHIPS",
+  },
+  {
+    id: 12,
+    question: "These two are credited as the creators of the show",
+    choicesArray: [
+      "Adam Lebowitz and Cheryl Walton",
+      "Susan and Andy Borowitz",
+      "Carlton Cuse and Linda Wilson",
+    ],
+    answer: "Susan and Andy Borowitz",
+    category: "BEHIND THE CAMERA",
+  },
+  {
+    id: 13,
+    question: "What is the name of Will's dad who came to visit?",
+    choicesArray: ["Will", "Joe", "Lou"],
+    answer: "Lou",
+    category: "CHARACTER NAMES",
+  },
+  {
+    id: 14,
+    question: "Carlton works as this mascot while at ULA with Will?",
+    choicesArray: ["Peacock", "Eagle", "Cavalier"],
+    answer: "Peacock",
+    category: "MAIN PLOTLINES",
+  },
+  {
+    id: 15,
+    question: "The show ran for how many seasons?",
+    choicesArray: ["4", "6", "7"],
+    answer: "6",
+    category: "BEHIND THE CAMERA",
   },
 ];
 
@@ -147,7 +241,6 @@ function questionTimer() {
   }, 15500);
 }
 
-
 //if  a choice has been made or time is up then set next question
 function evaluateAnswerGiven(e) {
   console.log("evalAnswer function is activated");
@@ -170,7 +263,7 @@ function setNextQuestion() {
     showQuestion(questionNum);
   } else {
     timerEl.textContent = `GAME OVER!!!!!!`;
-    showScore();    
+    showScore();
   }
 }
 /* //refactor code using this function
@@ -182,29 +275,27 @@ function gameOver(){
   markup = `<h1>Game Over</h1><p> Congrats! Press scores button to see how you did!<button id="scoresBtn" class="btn">Scores</button>`;
 } */
 
-
 function showScore() {
   const scoreDisplay = document.querySelector("#scoreDisplay");
   console.log("scoreDisplay: ", scoreDisplay);
   const scoreText = document.querySelector("#scoreText");
   console.log("scoreText: ", scoreText);
-  if (score === 0 || score < 7){
+  if (score === 0 || score < 7) {
     markup = `You scored ${score} points! You fail! Ok, so maybe add FPOBA to your tv binge list. I know you have one!  Press home button to restart the game.<button id="homeBtn" class"btn">Home</button>`;
     mainContent.innerHTML = markup;
-    const homeBtn = document.querySelector("#homeBtn")
-    homeBtn.addEventListener('click', ()=>{
-      location.href = "../index.html"
-    })
+    const homeBtn = document.querySelector("#homeBtn");
+    homeBtn.addEventListener("click", () => {
+      location.href = "../index.html";
+    });
   } else {
     markup = `You scored ${score} points! You win! I now crown you as Fresh Prince of Bel-Air fan royalty! Press home button to play again<button id="homeBtn" class"btn">Home</button>`;
     mainContent.innerHTML = markup;
-    const homeBtn = document.querySelector("#homeBtn")
-    homeBtn.addEventListener('click', ()=>{
-      location.href = "../index.html"
-    })
+    const homeBtn = document.querySelector("#homeBtn");
+    homeBtn.addEventListener("click", () => {
+      location.href = "../index.html";
+    });
   }
 }
-
 
 /* function resetGame() {
   markup = `

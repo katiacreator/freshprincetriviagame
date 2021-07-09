@@ -30,7 +30,7 @@ body{
   font-size: 52px;
   letter-spacing: 10px;
   text-align: center;
-  border: solid black 3px;
+  /* border: solid black 3px; */
 }
 
 .instructions{
@@ -38,7 +38,7 @@ body{
   text-align: center;
   color: var(--black);
   margin: 0 auto;
-  border: solid red 3px;
+  /* border: solid red 3px; */
 }
 
 /* default styling */
@@ -72,7 +72,7 @@ body{
   background: rgba(91, 10, 124, 0.717);
   margin: 20px;
   padding: 40px;
-  border: solid red 3px;
+  /* border: solid red 3px; */
 }
 
 
@@ -110,7 +110,7 @@ body{
   content: ' ';
   display: block;
   height: 50px;
-  border: solid white 10px;
+  /* border: solid white 10px; */
 margin-bottom: -60px;
 }
 
@@ -121,7 +121,7 @@ margin-bottom: -60px;
   width: 276px;
   height: 280px;
   margin: 0 12px;
-  border: solid red 4px;
+  /* border: solid red 4px; */
 }
 .filmstrip-frame img{
   display: block;

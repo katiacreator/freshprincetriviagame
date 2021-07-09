@@ -23,27 +23,33 @@
 ## So, why this show...this game?
 #### I decided to learn to code after watching my 1 year old niece get angry at my ipad because the matching game she was playing wouldn't just play the cat animation everytime she touched the screen. I was curious how games are even built and thought if it were simple enough I could build her a game that was at her level of taste and sophistication! I also wanted to challenge myself so a matching game would be too simple. I live in Will Smith's old neighborhood so I instantly thought of Fresh Prince when I needed a theme for my quiz game.
 #
-## 
-#### [Initial Home Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Home Game Screen.png" alt = "user profile picture" width = "400"/>
+## Initial Wireframes...
+#### [Initial Home Screen Wireframe]<img src = "assets/pseudocode images/wireframe Home Game Screen.png" alt = "home screen" width = "500" height="200" />
 #
-#### [Initial Quiz Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Quiz screens.png" alt = "user profile picture" width = "400"/>
+#### [Initial Quiz Screen Wireframe]<img src = "assets/pseudocode images/wireframe Quiz screens.png" alt = "quiz screen" width = "500"/>
 #
-#### [Initial Score Screen Wireframe]<img src = "assets/pseudocode images/Screen Shot Score Page.png" alt = "user profile picture" width = "400"/>
+#### [Initial Score Screen Wireframe]<img src = "assets/pseudocode images/wireframe Score Page.png" alt = "score screen" width = "500"/>
+#### [Color Palette for Game Logo]<img src = "assets/freshprince/freshprince-color palette.png" alt = "color palette for game logo" width="500">
 #
-## Final Screen Layouts
-...
+## Final Product
+#### [Final Home Screen]<img src = "assets/pseudocode images/home screen.png" alt = "final home screen" width = "500"/>
+#
 ## Languages and Tools Used
 ### HTML5, CSS3, Javascript, Animate.css, and lots of late-night googling!
 #
 ## Credits
 - Luigi Lucarelli(Character Designer) of all the cartoon images used-https://luigil.artstation.com/projects/mq3lL9
-- Shoutout to https://www.artofthetitle.com/title/the-fresh-prince-of-bel-air/ for inspiration in color palette based on the show
+- Dominick @ Codepen: https://codepen.io/dmj/pen/vVpdEe for my filmstrip animation code
+- Funtrivia.com for question ispiration (https://www.funtrivia.com/en/Television/Fresh-Prince-of-Bel-Air-2519.html)
+- Shoutout to https://www.artofthetitle.com/title/the-fresh-prince-of-bel-air/ for my css styling inspiration based on the show's title card
+- Shoutout to https://coolors.co/ for also assisting in generating a color palette 
+- Shoutout to https://tinypng.com for compressing my image files 
 #
 
 ## Icebox
-#### - Stay tuned for version 2.0 coming soon!
+#### - make responsive for all screen sizes
+#### - Add an expert mode with harder questions for more points
 #### - More animations and pictures on each screen
-#### - I'd like to score by category with more "expert" categories having higher points
 #### - Eventually, I'd like to see this project morph into a trivial pursuit style game that's been updated for millenial pop culture, complete with a digital game board that the user can move around on as they answer questions
 #
 ## Contributions to this Project?
