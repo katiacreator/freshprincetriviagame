@@ -1,6 +1,6 @@
 # Fresh Prince of Bel-Air Quiz Game
 
-### Demo: [Fresh Prince of Bel-Air Quiz Game](fresh-prince.surge.sh)
+### Demo: [Fresh Prince of Bel-Air Quiz Game](http://fresh-prince.surge.sh)
 ---
 ## What Does This Project Do?
 #### A timed-quiz game about the popular 90s tv show, "Fresh Prince of Bel-Air". This game celebrates all the hilarious and sometimes tragic moments-RIP Trevor Collins-Newsworthy!-that took place on the show, but also behind the cameras! 
