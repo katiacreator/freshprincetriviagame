@@ -33,11 +33,13 @@ body{
 }
 
 .instructions{
-  font-size: 32px;
-  text-align: center;
-  color: var(--black);
-  margin: 0 auto;
-  border: solid red 3px;
+  width: 400px;
+  height: 20px;
+  font-size: 18px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
 }
 /* default styling */
 #content {
@@ -52,16 +54,15 @@ body{
 /* this is the container */
 #content{
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 500px;
-  width: 1000px;
-  padding: 280px;
-  /* border: solid var(--deep-purple) 5px; */
-  /* border-radius: 25px; */
-  background-color: var(--bitter-lime);
-  border: solid rgb(76, 0, 255) 3px;
+  height: 200px;
+  width: 200px;
+  padding: 150px;
+  border: solid purple 15px;
+  border-radius: 25px;
+  background-color:var(--cotton-candy);
 }
 
 .img {
@@ -77,15 +78,14 @@ body{
 .btn {
   background-color: var(--aqua);
   color: black;
-  border: solid var(--bitter-lime) 8px;
+  border: solid var(--aqua) 8px;
   border-radius: 15px;
   display: block;
-  padding: 20px 40px;
-  font-size: 28px;
+  padding: 10px 20px;
+  font-size: 18px;
   text-align: center;
   text-decoration: none;
-  cursor: pointer;
-  
+  cursor: pointer; 
 }
 
 
