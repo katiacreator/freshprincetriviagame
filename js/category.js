@@ -21,7 +21,7 @@ const categoryArray = [
 ];
 let cardHtml = "";
 
-cardHtml = `<h3 class="instructions">CATEGORIES</h3>
+cardHtml = `<h3 id="category" class="instructions">CATEGORIES</h3>
 <p class="instructions">MAIN PLOTLINES: questions about the most iconic moments in the show</p>
 <p class="instructions">BEHIND THE CAMERA: questions about production and history of the show</p>
 <p class="instructions">CHARACTER NAMES: questions about main and not-so main recurring characters</p>
