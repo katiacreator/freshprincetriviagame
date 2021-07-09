@@ -281,14 +281,14 @@ function showScore() {
   const scoreText = document.querySelector("#scoreText");
   console.log("scoreText: ", scoreText);
   if (score === 0 || score < 100) {
-    markup = `You scored ${score} points! You fail! Ok, so maybe add FPOBA to your tv binge list. I know you have one!  Press home button to restart the game.<button id="homeBtn" class"btn">Home</button>`;
+    markup = `<h6 id="scoreText">You scored ${score} points! You fail! Ok, so maybe add FPOBA to your tv binge list. I know you have one!  Press home button to restart the game.</h6><button id="homeBtn" class="btn">Home</button>`;
     mainContent.innerHTML = markup;
     const homeBtn = document.querySelector("#homeBtn");
     homeBtn.addEventListener("click", () => {
       location.href = "../index.html";
     });
   } else {
-    markup = `You scored ${score} points! You win! I now crown you as Fresh Prince of Bel-Air fan royalty! Press home button to play again<button id="homeBtn" class"btn">Home</button>`;
+    markup = `<h6 id="scoreText">You scored ${score} points! You win! I now crown you as Fresh Prince of Bel-Air fan royalty! Press home button to play again</h6><button id="homeBtn" class="btn">Home</button>`;
     mainContent.innerHTML = markup;
     const homeBtn = document.querySelector("#homeBtn");
     homeBtn.addEventListener("click", () => {
@@ -309,10 +309,4 @@ function showScore() {
   questionNum = 0;
   score = 0;
 } */
-/*  add play ticking sound
-function play2() {
-  
-  /* Audio link for notification 
-  var audio = new Audio(" ");
-  audio.play();
-} */
+

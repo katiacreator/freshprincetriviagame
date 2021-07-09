@@ -31,9 +31,9 @@ body{
   height: 500px;
   width: 500px;
   padding: 180px;
-   border: solid rgb(77, 4, 77) 5px; 
-  /* border-radius: 25px; */
-  background-color: var(--bitter-lime);
+  border: solid purple 15px;
+  border-radius: 25px;
+  background-color:var(--cotton-candy);
 }
 
 .instructions{
@@ -74,7 +74,7 @@ border: solid white 0.5px;
 .btn:hover{
   background-color: var(--aqua);
   animation: pulse;
-  animation-duration: .5s; 
+  animation-duration: 2s; 
 } 
 
 .hide{
